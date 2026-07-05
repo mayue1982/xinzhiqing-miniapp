@@ -285,6 +285,61 @@ button::after {
   margin-top: 6rpx;
 }
 
+.visual-swiper {
+  height: 292rpx;
+  margin: 20rpx 0 20rpx;
+  border-radius: 24rpx;
+  overflow: hidden;
+  box-shadow: 0 16rpx 32rpx rgba(31, 98, 167, 0.12);
+}
+
+.visual-slide {
+  position: relative;
+  width: 100%;
+  height: 292rpx;
+  overflow: hidden;
+  border-radius: 24rpx;
+  background: #145ea8;
+}
+
+.visual-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.visual-mask {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(13, 48, 92, 0.68), rgba(13, 48, 92, 0.12) 58%, rgba(13, 48, 92, 0.22)),
+    linear-gradient(180deg, transparent 42%, rgba(13, 48, 92, 0.38));
+}
+
+.visual-copy {
+  position: absolute;
+  left: 28rpx;
+  bottom: 28rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.visual-subtitle {
+  color: #ffe0a0;
+  font-size: 18rpx;
+  letter-spacing: 4rpx;
+  text-transform: uppercase;
+}
+
+.visual-title {
+  color: #ffffff;
+  font-size: 34rpx;
+  font-weight: 800;
+  letter-spacing: 2rpx;
+  text-shadow: 0 4rpx 12rpx rgba(0, 32, 70, 0.28);
+}
+
 .chip-row {
   display: flex;
   gap: 12rpx;
@@ -319,6 +374,15 @@ button::after {
 .note-card {
   min-height: 154rpx;
   padding: 18rpx;
+}
+
+.route-thumb-image {
+  width: 100%;
+  height: 116rpx;
+  display: block;
+  margin-bottom: 14rpx;
+  border-radius: 16rpx;
+  background: #eef6fd;
 }
 
 .card-title {

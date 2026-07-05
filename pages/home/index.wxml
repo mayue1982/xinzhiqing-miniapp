@@ -29,6 +29,19 @@ Cultural Tourism</view>
     </view>
   </view>
 
+  <swiper class="visual-swiper" autoplay circular interval="4200" duration="600" indicator-dots indicator-color="rgba(255,255,255,.45)" indicator-active-color="#efbc52">
+    <swiper-item wx:for="{{carouselItems}}" wx:key="title">
+      <view class="visual-slide">
+        <image class="visual-image" src="{{item.image}}" mode="aspectFill"></image>
+        <view class="visual-mask"></view>
+        <view class="visual-copy">
+          <text class="visual-subtitle">{{item.subtitle}}</text>
+          <text class="visual-title">{{item.title}}</text>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+
   <view class="section-head">
     <text class="section-head-title">成长体系</text>
     <text class="section-head-subtitle">4 LEVELS</text>
@@ -45,6 +58,7 @@ Cultural Tourism</view>
 
   <view class="two-col-grid">
     <view wx:for="{{routes}}" wx:key="id" class="glass-card" data-id="{{item.id}}" bindtap="openRoute">
+      <image class="route-thumb-image" src="{{item.image}}" mode="aspectFill"></image>
       <view class="card-title">{{item.title}}</view>
       <view class="card-subtitle">{{item.subtitle}}</view>
       <view class="card-copy">{{item.desc}}</view>

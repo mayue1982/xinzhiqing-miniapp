@@ -1,7 +1,12 @@
 {
   "description": "心之清文旅小程序",
   "packOptions": {
-    "ignore": [],
+    "ignore": [
+      {
+        "type": "glob",
+        "value": "assets/images/*.png"
+      }
+    ],
     "include": []
   },
   "setting": {
