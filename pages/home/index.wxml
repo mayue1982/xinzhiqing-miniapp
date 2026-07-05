@@ -17,7 +17,6 @@
         </view>
       </swiper-item>
     </swiper>
-    <view class="visual-mask"></view>
     <view class="visual-copy">
       <image class="visual-title-art" src="/assets/images/hero-title-art.png" mode="widthFix"></image>
       <view class="visual-title-zh">心之清文旅，探索世界文明</view>

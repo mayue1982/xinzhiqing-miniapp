@@ -329,16 +329,6 @@ button::after {
   display: block;
 }
 
-.visual-mask {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background:
-    linear-gradient(90deg, rgba(0, 101, 169, 0.54), rgba(0, 113, 184, 0.30) 58%, rgba(0, 101, 169, 0.10)),
-    linear-gradient(180deg, rgba(0, 101, 169, 0.04), rgba(0, 101, 169, 0.20));
-  pointer-events: none;
-}
-
 .visual-copy {
   position: absolute;
   z-index: 3;
@@ -373,7 +363,7 @@ button::after {
   margin-top: 4rpx;
   font-size: 26rpx;
   letter-spacing: 4rpx;
-  text-shadow: 0 4rpx 12rpx rgba(0, 63, 112, 0.20);
+  text-shadow: 0 4rpx 10rpx rgba(0, 44, 82, 0.26);
 }
 
 .visual-desc {
@@ -392,6 +382,7 @@ button::after {
   font-size: 23rpx;
   font-style: italic;
   line-height: 1.45;
+  text-shadow: 0 4rpx 10rpx rgba(0, 44, 82, 0.24);
 }
 
 .search-entry {
