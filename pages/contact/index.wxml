@@ -1,0 +1,59 @@
+<view class="screen-page">
+  <view class="custom-nav with-back">
+    <button class="back-btn" bindtap="goBack">‹</button>
+    <view class="brand-wrap">
+      <view class="brand-dot">顾</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">联系顾问</text>
+        <text class="brand-stack-subtitle">ADVISOR</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-overview glass-card">
+    <text class="overview-kicker">Advisor Bridge</text>
+    <view class="overview-title">顾问承接是第一版的核心转化动作</view>
+    <view class="overview-copy">这里用一个清楚、可信、可执行的页面把顾问承接表达完整，避免只剩一个空按钮。</view>
+  </view>
+
+  <view class="advisor-card" wx:if="{{contact.advisor}}">
+    <view class="advisor-row">
+      <view class="advisor-avatar">{{contact.advisor.avatar}}</view>
+      <view>
+        <view class="card-title" style="color:#fff; margin-bottom:4rpx;">{{contact.advisor.name}}</view>
+        <view class="card-copy" style="color:rgba(255,255,255,.88);">{{contact.advisor.role}}</view>
+      </view>
+    </view>
+    <view class="metric-grid">
+      <view class="metric"><text class="metric-num">1V1</text><text class="metric-label">跟进方式</text></view>
+      <view class="metric"><text class="metric-num">{{contact.advisor.hours}}</text><text class="metric-label">服务时段</text></view>
+      <view class="metric"><text class="metric-num">{{contact.advisor.responseTime}}</text><text class="metric-label">响应速度</text></view>
+    </view>
+  </view>
+
+  <view class="glass-card">
+    <view class="section-head" style="margin-top:0;">
+      <text class="section-head-title">联系信息</text>
+      <text class="section-head-subtitle">INFO</text>
+    </view>
+    <view class="info-grid">
+      <view class="info-item">
+        <view class="info-label">顾问微信</view>
+        <view class="info-value">{{contact.advisor.wechat}}</view>
+      </view>
+      <view class="info-item">
+        <view class="info-label">顾问电话</view>
+        <view class="info-value">{{contact.advisor.phone}}</view>
+      </view>
+    </view>
+    <view class="contact-actions">
+      <button class="primary-btn" bindtap="copyWechat">复制微信</button>
+      <button class="outline-btn" bindtap="copyPhone">复制电话</button>
+    </view>
+  </view>
+
+  <view class="soft-card">
+    <view class="soft-title">承接说明</view>
+    <view class="soft-copy">{{contact.description}}</view>
+  </view>
+</view>

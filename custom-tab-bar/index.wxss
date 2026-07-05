@@ -1,0 +1,123 @@
+.tabbar-shell {
+  position: fixed;
+  left: 24rpx;
+  right: 24rpx;
+  bottom: 24rpx;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8rpx;
+  height: 116rpx;
+  padding: 12rpx;
+  border-radius: 40rpx;
+  border: 2rpx solid rgba(72, 118, 169, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 10rpx 24rpx rgba(56, 96, 140, 0.08);
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rpx;
+  border-radius: 28rpx;
+  color: #97a7b8;
+  font-size: 18rpx;
+  font-weight: 700;
+}
+
+.tab-item.active {
+  color: #145ea8;
+  background: linear-gradient(180deg, rgba(78, 164, 245, 0.14), rgba(78, 164, 245, 0.06));
+}
+
+.tab-icon {
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+}
+
+.tab-icon::before,
+.tab-icon::after {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  border-color: currentColor;
+}
+
+.tab-home::before {
+  left: 4rpx;
+  right: 4rpx;
+  bottom: 4rpx;
+  height: 20rpx;
+  border: 4rpx solid currentColor;
+  border-top: 0;
+  border-radius: 0 0 8rpx 8rpx;
+}
+
+.tab-home::after {
+  left: 8rpx;
+  right: 8rpx;
+  top: 2rpx;
+  height: 20rpx;
+  border-left: 4rpx solid currentColor;
+  border-top: 4rpx solid currentColor;
+  border-right: 4rpx solid currentColor;
+  transform: skewY(-30deg);
+  border-radius: 6rpx 6rpx 0 0;
+}
+
+.tab-grow::before {
+  inset: 6rpx;
+  border: 4rpx solid currentColor;
+  border-radius: 50%;
+}
+
+.tab-grow::after {
+  left: 18rpx;
+  top: 2rpx;
+  width: 4rpx;
+  height: 36rpx;
+  background: currentColor;
+  box-shadow: -14rpx 14rpx 0 0 currentColor, 14rpx 14rpx 0 0 currentColor;
+  transform: rotate(25deg);
+  border-radius: 4rpx;
+}
+
+.tab-news::before {
+  inset: 4rpx;
+  border: 4rpx solid currentColor;
+  border-radius: 10rpx;
+}
+
+.tab-news::after {
+  left: 12rpx;
+  top: 12rpx;
+  width: 16rpx;
+  height: 4rpx;
+  background: currentColor;
+  box-shadow: 0 8rpx 0 0 currentColor, 0 16rpx 0 0 currentColor;
+  border-radius: 4rpx;
+}
+
+.tab-mine::before {
+  left: 10rpx;
+  top: 4rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border: 4rpx solid currentColor;
+  border-radius: 50%;
+}
+
+.tab-mine::after {
+  left: 6rpx;
+  right: 6rpx;
+  bottom: 4rpx;
+  height: 16rpx;
+  border: 4rpx solid currentColor;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  border-bottom: 0;
+}

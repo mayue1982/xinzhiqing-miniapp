@@ -1,0 +1,37 @@
+<view class="screen-page">
+  <view class="custom-nav">
+    <view class="brand-wrap">
+      <view class="brand-dot">阅</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">成长资讯</text>
+        <text class="brand-stack-subtitle">MIND & JOURNEY</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="hero-card">
+    <text class="hero-badge">Mind Growth</text>
+    <view class="hero-title-en">Return To
+Inner Clarity</view>
+    <view class="hero-title-zh">理 念 · 疗 愈 · 自 然 · 故 事</view>
+    <view class="hero-copy">关于成长、疗愈、自然与路线故事。</view>
+    <view class="hero-copy-en">Editorial stories that translate the brand into thought, feeling, and experience.</view>
+  </view>
+
+  <view class="chip-row">
+    <view wx:for="{{chips}}" wx:key="*this" class="chip {{index === 0 ? 'chip-active' : ''}}">{{item}}</view>
+  </view>
+
+  <view wx:for="{{articles}}" wx:key="id" class="list-card" data-id="{{item.id}}" bindtap="openArticle">
+    <view class="thumb"></view>
+    <view>
+      <view class="card-title">{{item.title}}</view>
+      <view class="card-copy">{{item.desc}}</view>
+    </view>
+  </view>
+
+  <view class="soft-card">
+    <view class="soft-title">价值观</view>
+    <view class="soft-copy">自然、生态、环保、文明、爱、自觉。</view>
+  </view>
+</view>

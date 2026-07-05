@@ -1,0 +1,42 @@
+<view class="screen-page">
+  <view class="custom-nav with-back">
+    <button class="back-btn" bindtap="goBack">‹</button>
+    <view class="brand-wrap">
+      <view class="brand-dot">成</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">提交成功</text>
+        <text class="brand-stack-subtitle">SUBMITTED</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-overview glass-card">
+    <text class="overview-kicker">Journey Request</text>
+    <view class="overview-title">顾问已收到您的成长定制申请</view>
+    <view class="overview-copy">这一步已经完成，接下来会进入顾问整理与联系阶段，明细也会同步沉淀在“我的需求”中。</view>
+  </view>
+
+  <view class="hero-card">
+    <text class="hero-badge">Request Submitted</text>
+    <view class="hero-title-en">Your Request Has Been Received</view>
+    <view class="hero-title-zh">您的成长定制需求已提交</view>
+    <view class="hero-copy">顾问将根据您填写的内容进一步整理，并尽快与您联系。</view>
+  </view>
+
+  <view class="soft-card" wx:if="{{request}}">
+    <view class="soft-title">已提交内容</view>
+    <view class="soft-copy">方向：{{request.serviceType || request.type}}</view>
+    <view class="soft-copy">出发地：{{request.city}} / 目的地：{{request.destination}}</view>
+    <view class="soft-copy">人数与时间：{{request.groupSize}} / {{request.timeWindow}}</view>
+  </view>
+
+  <view class="soft-card">
+    <view class="soft-title">下一步</view>
+    <view class="soft-copy">建议保持微信与电话畅通，后续可在“我的需求”或“咨询记录”中持续查看进度。</view>
+  </view>
+
+  <view class="hero-actions" style="margin-top:18rpx;">
+    <button class="primary-btn" bindtap="goRequests">查看我的需求</button>
+    <button class="outline-btn" bindtap="goHome">返回首页</button>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+<view class="screen-page mine-page">
+  <view class="custom-nav">
+    <view class="brand-wrap">
+      <view class="brand-dot">我</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">我的</text>
+        <text class="brand-stack-subtitle">MY JOURNEYS</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="profile-card">
+    <view class="profile-row">
+      <view class="avatar">{{profile.avatar}}</view>
+      <view>
+        <view class="card-title" style="color:#fff; margin-bottom:4rpx;">{{profile.name}}</view>
+        <view class="card-copy" style="color:rgba(255,255,255,.88);">{{profile.subtitle}}</view>
+      </view>
+    </view>
+    <view class="metric-grid">
+      <view class="metric"><text class="metric-num">{{stats.orders}}</text><text class="metric-label">ORDERS</text></view>
+      <view class="metric"><text class="metric-num">{{stats.requests}}</text><text class="metric-label">REQUESTS</text></view>
+      <view class="metric"><text class="metric-num">{{stats.saved}}</text><text class="metric-label">SAVED</text></view>
+    </view>
+  </view>
+
+  <view class="menu-card">
+    <view wx:for="{{menus}}" wx:key="title" class="menu-row" data-title="{{item.title}}" bindtap="handleMenuTap">
+      <text>{{item.title}}</text>
+      <text class="menu-meta">{{item.meta}}</text>
+    </view>
+  </view>
+
+  <view class="soft-card" wx:if="{{recentOrder}}" bindtap="openRecentOrder">
+    <view class="soft-title">最近订单</view>
+    <view class="soft-copy">{{recentOrder.title}} / {{recentOrder.status}}</view>
+  </view>
+
+  <view class="soft-card" wx:if="{{recentRequest}}" bindtap="openRecentRequest">
+    <view class="soft-title">最近需求</view>
+    <view class="soft-copy">{{recentRequest.title}} / {{recentRequest.status}}</view>
+  </view>
+</view>

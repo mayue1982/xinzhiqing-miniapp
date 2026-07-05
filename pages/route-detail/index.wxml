@@ -1,0 +1,49 @@
+<view class="screen-page">
+  <view class="custom-nav with-back">
+    <button class="back-btn" bindtap="goBack">‹</button>
+    <view class="brand-wrap">
+      <view class="brand-dot">线</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">路线详情</text>
+        <text class="brand-stack-subtitle">ROUTE DETAIL</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-overview glass-card" wx:if="{{route}}">
+    <text class="overview-kicker">Featured Journey</text>
+    <view class="overview-title">{{route.title}}</view>
+    <view class="overview-copy">{{route.desc}}</view>
+  </view>
+
+  <view class="hero-card" wx:if="{{route}}">
+    <text class="hero-badge">Featured Route</text>
+    <view class="hero-title-en">{{route.subtitle}}</view>
+    <view class="hero-title-zh">{{route.title}}</view>
+    <view class="hero-copy">{{route.longDesc}}</view>
+  </view>
+
+  <view class="info-grid" wx:if="{{route}}">
+    <view class="info-item">
+      <view class="info-label">适合人群</view>
+      <view class="info-value">{{route.audience}}</view>
+    </view>
+    <view class="info-item">
+      <view class="info-label">体验重点</view>
+      <view class="info-value">{{route.highlights}}</view>
+    </view>
+  </view>
+
+  <view class="note-card">
+    <view class="section-head" style="margin-top:0;">
+      <text class="section-head-title">路线介绍</text>
+      <text class="section-head-subtitle">OVERVIEW</text>
+    </view>
+    <view class="card-copy">{{route.longDesc}}</view>
+  </view>
+
+  <view class="hero-actions" style="margin-top:18rpx;">
+    <button class="primary-btn" bindtap="startConsult">提交咨询</button>
+    <button class="outline-btn" bindtap="goHome">返回首页</button>
+  </view>
+</view>

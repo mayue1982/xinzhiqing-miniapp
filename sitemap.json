@@ -1,0 +1,9 @@
+{
+  "desc": "心之清文旅小程序 sitemap",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

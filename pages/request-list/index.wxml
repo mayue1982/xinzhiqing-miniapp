@@ -1,0 +1,44 @@
+<view class="screen-page">
+  <view class="custom-nav with-back">
+    <button class="back-btn" bindtap="goBack">‹</button>
+    <view class="brand-wrap">
+      <view class="brand-dot">需</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">我的需求</text>
+        <text class="brand-stack-subtitle">REQUESTS</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-overview glass-card">
+    <text class="overview-kicker">Request Archive</text>
+    <view class="overview-title">成长定制与顾问承接记录</view>
+    <view class="overview-copy">这里汇总所有已提交的需求，便于领导看到这套小程序后续如何承接高意向用户。</view>
+  </view>
+
+  <view wx:if="{{requests.length}}">
+    <view wx:for="{{requests}}" wx:key="id" class="timeline-card">
+      <view class="section-head" style="margin-top:0;">
+        <text class="timeline-title">{{item.serviceType || item.type}}</text>
+        <text class="status-pill">{{item.status}}</text>
+      </view>
+      <view class="timeline-copy">{{item.city}} 出发 / {{item.destination}} 方向 / {{item.groupSize}} / {{item.timeWindow}}</view>
+      <view class="timeline-copy">预算：{{item.budget}}</view>
+      <view class="timeline-copy">备注：{{item.note}}</view>
+      <view class="timeline-foot">
+        <text class="timeline-meta">{{item.id}}</text>
+        <text class="timeline-meta">{{item.displayTime}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty-card" wx:else>
+    <view class="empty-title">还没有提交记录</view>
+    <view class="empty-copy">可以先从成长定制页提交一份示例需求，页面会自动沉淀到这里。</view>
+  </view>
+
+  <view class="hero-actions">
+    <button class="primary-btn" bindtap="goGrowth">继续填写需求</button>
+  </view>
+</view>
+

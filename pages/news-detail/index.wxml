@@ -1,0 +1,33 @@
+<view class="screen-page">
+  <view class="custom-nav with-back">
+    <button class="back-btn" bindtap="goBack">‹</button>
+    <view class="brand-wrap">
+      <view class="brand-dot">文</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">资讯详情</text>
+        <text class="brand-stack-subtitle">ARTICLE</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-overview glass-card" wx:if="{{article}}">
+    <text class="overview-kicker">Editorial Story</text>
+    <view class="overview-title">{{article.title}}</view>
+    <view class="overview-copy">{{article.desc}}</view>
+  </view>
+
+  <view class="hero-card" wx:if="{{article}}">
+    <text class="hero-badge">Mind Growth Article</text>
+    <view class="hero-title-en">Article Detail</view>
+    <view class="hero-title-zh">{{article.title}}</view>
+    <view class="hero-copy">{{article.desc}}</view>
+  </view>
+
+  <view class="note-card" wx:if="{{article}}">
+    <view class="section-head" style="margin-top:0;">
+      <text class="section-head-title">正文摘要</text>
+      <text class="section-head-subtitle">CONTENT</text>
+    </view>
+    <view class="card-copy">{{article.content}}</view>
+  </view>
+</view>

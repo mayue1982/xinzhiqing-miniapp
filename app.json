@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/growth/index",
+    "pages/news/index",
+    "pages/mine/index",
+    "pages/route-detail/index",
+    "pages/growth-success/index",
+    "pages/news-detail/index",
+    "pages/order-detail/index",
+    "pages/request-list/index",
+    "pages/consult-record/index",
+    "pages/favorites/index",
+    "pages/contact/index"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#f7fafc",
+    "backgroundTextStyle": "dark"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "color": "#97a7b8",
+    "selectedColor": "#145ea8",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/growth/index",
+        "text": "成长定制"
+      },
+      {
+        "pagePath": "pages/news/index",
+        "text": "资讯"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的"
+      }
+    ]
+  }
+}

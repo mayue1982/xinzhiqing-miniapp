@@ -1,0 +1,40 @@
+<view class="screen-page">
+  <view class="custom-nav with-back">
+    <button class="back-btn" bindtap="goBack">‹</button>
+    <view class="brand-wrap">
+      <view class="brand-dot">单</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">订单详情</text>
+        <text class="brand-stack-subtitle">ORDER DETAIL</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-overview glass-card" wx:if="{{order}}">
+    <text class="overview-kicker">Order Snapshot</text>
+    <view class="overview-title">{{order.routeTitle}}</view>
+    <view class="overview-copy">当前处于顾问确认阶段，这个页面主要承接订单表达与后续进度查看。</view>
+  </view>
+
+  <view class="profile-card" wx:if="{{order}}">
+    <view class="profile-row">
+      <view class="avatar">1</view>
+      <view>
+        <view class="card-title" style="color:#fff; margin-bottom:4rpx;">{{order.routeTitle}}</view>
+        <view class="card-copy" style="color:rgba(255,255,255,.88);">当前状态：{{order.status}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="menu-card" wx:if="{{order}}">
+    <view class="menu-row"><text>订单编号</text><text class="menu-meta">{{order.id}}</text></view>
+    <view class="menu-row"><text>路线名称</text><text class="menu-meta">{{order.routeTitle}}</text></view>
+    <view class="menu-row"><text>当前状态</text><text class="menu-meta">{{order.status}}</text></view>
+    <view class="menu-row"><text>联系人</text><text class="menu-meta">{{order.contact}}</text></view>
+  </view>
+
+  <view class="soft-card" wx:if="{{order}}">
+    <view class="soft-title">说明</view>
+    <view class="soft-copy">{{order.note}}</view>
+  </view>
+</view>

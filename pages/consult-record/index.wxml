@@ -1,0 +1,37 @@
+<view class="screen-page">
+  <view class="custom-nav with-back">
+    <button class="back-btn" bindtap="goBack">‹</button>
+    <view class="brand-wrap">
+      <view class="brand-dot">咨</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">咨询记录</text>
+        <text class="brand-stack-subtitle">CONSULTATION</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-overview glass-card">
+    <text class="overview-kicker">Consultation Flow</text>
+    <view class="overview-title">顾问跟进过程一目了然</view>
+    <view class="overview-copy">这里展示咨询从接收、匹配到方案整理的过程，让承接链路看起来更完整。</view>
+  </view>
+
+  <view wx:if="{{consultations.length}}">
+    <view wx:for="{{consultations}}" wx:key="id" class="timeline-card">
+      <view class="section-head" style="margin-top:0;">
+        <text class="timeline-title">{{item.title}}</text>
+        <text class="status-pill">{{item.status}}</text>
+      </view>
+      <view class="timeline-copy">{{item.summary}}</view>
+      <view class="timeline-foot">
+        <text class="timeline-meta">{{item.id}}</text>
+        <text class="timeline-meta">{{item.updatedAt}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty-card" wx:else>
+    <view class="empty-title">暂无咨询记录</view>
+    <view class="empty-copy">当顾问开始跟进后，后续沟通会沉淀在这里。</view>
+  </view>
+</view>

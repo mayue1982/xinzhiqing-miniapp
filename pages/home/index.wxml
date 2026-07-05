@@ -1,0 +1,53 @@
+<view class="screen-page">
+  <view class="custom-nav">
+    <view class="brand-wrap">
+      <view class="brand-dot">清</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">心之清文旅</text>
+        <text class="brand-stack-subtitle">XINZHIQING</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="hero-card">
+    <text class="hero-badge">Global Mind Growth Journey</text>
+    <view class="hero-title-en">Xinzhiqing
+Cultural Tourism</view>
+    <view class="hero-title-zh">心 之 清 文 旅 · 入 道 调 心 境</view>
+    <view class="hero-copy">在星空与自然之间，回到更清楚、更纯粹的自己。</view>
+    <view class="hero-copy-en">A mindful path shaped by nature, stillness, and long-term inner clarity.</view>
+    <view class="hero-actions">
+      <button class="primary-btn">开启体验</button>
+      <button class="secondary-btn">了解更多</button>
+    </view>
+  </view>
+
+  <view class="quick-grid">
+    <view wx:for="{{quickItems}}" wx:key="title" class="quick-card">
+      <view class="quick-icon">{{item.icon}}</view>
+      <view class="quick-label">{{item.title}}</view>
+    </view>
+  </view>
+
+  <view class="section-head">
+    <text class="section-head-title">成长体系</text>
+    <text class="section-head-subtitle">4 LEVELS</text>
+  </view>
+
+  <view class="chip-row">
+    <view wx:for="{{levels}}" wx:key="*this" class="chip {{index === 0 ? 'chip-active' : ''}}">{{item}}</view>
+  </view>
+
+  <view class="section-head">
+    <text class="section-head-title">精选路线</text>
+    <text class="section-head-subtitle">FEATURED</text>
+  </view>
+
+  <view class="two-col-grid">
+    <view wx:for="{{routes}}" wx:key="id" class="glass-card" data-id="{{item.id}}" bindtap="openRoute">
+      <view class="card-title">{{item.title}}</view>
+      <view class="card-subtitle">{{item.subtitle}}</view>
+      <view class="card-copy">{{item.desc}}</view>
+    </view>
+  </view>
+</view>

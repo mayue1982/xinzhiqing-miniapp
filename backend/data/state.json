@@ -1,0 +1,191 @@
+{
+  "brandName": "心之清文旅",
+  "profile": {
+    "name": "微信用户",
+    "subtitle": "查看订单、成长需求与顾问记录。",
+    "avatar": "心"
+  },
+  "stats": {
+    "orders": 1,
+    "requests": 2,
+    "saved": 3
+  },
+  "contact": {
+    "title": "联系顾问",
+    "description": "当前版本先由顾问承接，后续可接入在线咨询。",
+    "advisor": {
+      "name": "林清顾问",
+      "role": "成长路线顾问",
+      "avatar": "顾",
+      "wechat": "xinzhiqing-advisor",
+      "phone": "400-860-2026",
+      "hours": "09:00 - 21:00",
+      "responseTime": "24 小时内首次联系"
+    }
+  },
+  "hero": {
+    "badge": "Global Mind Growth Journey",
+    "titleEn": "Xinzhiqing\nCultural Tourism",
+    "titleZh": "心 之 清 文 旅 · 入 道 调 心 境",
+    "copy": "在星空与自然之间，回到更清楚、更纯粹的自己。",
+    "copyEn": "A mindful path shaped by nature, stillness, and long-term inner clarity."
+  },
+  "quickItems": [
+    {
+      "icon": "调",
+      "title": "心灵培训"
+    },
+    {
+      "icon": "养",
+      "title": "心灵保养"
+    },
+    {
+      "icon": "愈",
+      "title": "心灵疗愈"
+    },
+    {
+      "icon": "旅",
+      "title": "心灵旅游"
+    }
+  ],
+  "levels": [
+    "初级",
+    "中级",
+    "高级",
+    "使命"
+  ],
+  "routes": [
+    {
+      "id": "route-001",
+      "title": "初级心灵培训线",
+      "subtitle": "mind training",
+      "desc": "建立自我意识，进入成长主线。",
+      "longDesc": "以自然环境体验为基础，帮助参与者建立正确自我意识，并在真实旅程中逐步进入长期成长主线。",
+      "audience": "适合希望进行初级心灵训练、状态整理与方向建立的人群。",
+      "highlights": "自然感受、自我认知、系统化提升、主线建立"
+    },
+    {
+      "id": "route-002",
+      "title": "自然疗愈恢复线",
+      "subtitle": "healing route",
+      "desc": "释放情绪，恢复平衡与稳定。",
+      "longDesc": "借助自然与安静环境，帮助用户释放长期积累的负面情绪，逐步恢复平衡、稳定与呼吸感。",
+      "audience": "适合高压、疲惫、情绪长期紧绷的人群。",
+      "highlights": "情绪释放、环境修复、恢复平衡、状态稳定"
+    },
+    {
+      "id": "route-003",
+      "title": "心灵保养静修线",
+      "subtitle": "maintenance",
+      "desc": "长期维护身心清净与松弛。",
+      "longDesc": "通过规律性的保养式旅程，维持长期平衡、清净与松弛状态，让内在系统不被反复消耗。",
+      "audience": "适合已经建立基础，但希望长期保养的人群。",
+      "highlights": "长期保养、清净感、平衡感、持续维护"
+    },
+    {
+      "id": "route-004",
+      "title": "成长定制体验线",
+      "subtitle": "bespoke",
+      "desc": "根据个人状态匹配路径。",
+      "longDesc": "根据用户的当前状态、成长目标、时间与预算，定制更适合的培训、疗愈或旅游路径。",
+      "audience": "适合需求更个性化、更需要顾问匹配的人群。",
+      "highlights": "个性定制、顾问匹配、成长目标、灵活路径"
+    }
+  ],
+  "articles": [
+    {
+      "id": "article-001",
+      "title": "什么是心灵培训旅游？",
+      "desc": "通过自然环境体验，帮助建立正确主线。",
+      "content": "心灵培训旅游，不是普通意义上的旅游消费，而是让人在自然与环境之中重新建立内在秩序。它强调通过路线、节奏、环境和引导，让生命逐步形成更正确的意识主线。"
+    },
+    {
+      "id": "article-002",
+      "title": "为什么自然环境能帮助疗愈？",
+      "desc": "在山水之间，情绪更容易释放与沉稳。",
+      "content": "自然环境的开阔、安静与秩序感，会让人从长期高压和密集信息中抽离出来。疗愈并不是立刻解决所有问题，而是先回到一个能呼吸、能感受、能恢复的状态。"
+    },
+    {
+      "id": "article-003",
+      "title": "四级成长体系如何递进？",
+      "desc": "从初级到使命，每一层都有不同目标。",
+      "content": "从初级到使命，并不是简单的能力叠加，而是从自我意识的建立，到日常系统维护，再到更高层次的整合与传播。每一个阶段都对应不同的生命任务。"
+    }
+  ],
+  "orders": [
+    {
+      "id": "XZQ-202606-001",
+      "routeTitle": "初级心灵培训旅游线路",
+      "status": "待顾问确认",
+      "contact": "微信用户",
+      "note": "当前为静态演示数据，后续接真实订单接口。",
+      "createdAt": "2026-06-23T08:00:00.000Z"
+    }
+  ],
+  "requests": [
+    {
+      "id": "REQ-202606-001",
+      "type": "成长定制",
+      "city": "杭州",
+      "destination": "云南",
+      "groupSize": "2人",
+      "timeWindow": "3天2晚",
+      "budget": "5000-8000",
+      "serviceType": "心灵疗愈",
+      "note": "希望先做一次轻量疗愈路线，再逐步进入系统成长。",
+      "status": "已提交，待顾问跟进",
+      "createdAt": "2026-06-23T10:30:00.000Z"
+    },
+    {
+      "id": "REQ-202606-002",
+      "type": "心灵培训",
+      "city": "深圳",
+      "destination": "福建",
+      "groupSize": "4人",
+      "timeWindow": "5天4晚",
+      "budget": "8000-12000",
+      "serviceType": "成长定制",
+      "note": "需要顾问推荐适合的初级路线。",
+      "status": "已提交，待顾问跟进",
+      "createdAt": "2026-06-24T03:20:00.000Z"
+    }
+  ],
+  "menus": [
+    {
+      "title": "我的订单",
+      "meta": "查看"
+    },
+    {
+      "title": "成长定制",
+      "meta": "查看"
+    },
+    {
+      "title": "咨询记录",
+      "meta": "查看"
+    },
+    {
+      "title": "我的收藏",
+      "meta": "查看"
+    },
+    {
+      "title": "联系顾问",
+      "meta": "进入"
+    }
+  ],
+  "recentOrders": [
+    {
+      "id": "XZQ-202606-001",
+      "title": "初级心灵培训旅游线路",
+      "status": "沟通中"
+    }
+  ],
+  "recentRequests": [
+    {
+      "id": "REQ-202606-001",
+      "title": "心灵疗愈",
+      "status": "希望恢复平衡状态"
+    }
+  ],
+  "favorites": [],
+  "consultations": []
+}
