@@ -363,7 +363,7 @@ button::after {
 }
 
 .visual-title-art {
-  width: 570rpx;
+  width: 620rpx;
   height: auto;
   display: block;
 }

@@ -51,9 +51,4 @@ Growth Journey</view>
       <button class="outline-btn" bindtap="saveDraft">保存</button>
     </view>
   </view>
-
-  <view class="soft-card">
-    <view class="soft-title">AI 互动预留</view>
-    <view class="soft-copy">第一版先由顾问承接，后续可以在这里接入 AI 对话，帮助用户逐步完善培训与游学需求。</view>
-  </view>
 </view>
