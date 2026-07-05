@@ -1,0 +1,2 @@
+# xinzhiqing-miniapp
+miniapp
