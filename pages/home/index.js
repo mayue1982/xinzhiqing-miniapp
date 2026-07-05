@@ -30,10 +30,10 @@ Page({
     quickItems: [],
     levels: [],
     culturePrinciples: [
-      { label: '一', title: '文化平等尊重', subtitle: 'CULTURAL EQUALITY & RESPECT', copy: '我们视每一种文化为独特而平等的人类智慧，旅行中始终保持对当地文化的尊重、好奇与谦逊。' },
-      { label: '二', title: '可持续文化旅游', subtitle: 'SUSTAINABLE CULTURAL TOURISM', copy: '将文化保护与旅游发展相统一，确保每一次到访都为目的地社区带来积极的经济与社会效益。' },
-      { label: '三', title: '深度沉浸体验', subtitle: 'DEEP IMMERSIVE EXPERIENCE', copy: '超越表面观光，通过与当地学者、匠人和社区的真实互动，探索文化的深层内涵与活态传承。' },
-      { label: '四', title: '教育赋能旅行', subtitle: 'EDUCATION-EMPOWERED TRAVEL', copy: '每趟旅程都是学习的机会，以专业知识与现场体验共同构成更有深度的文明理解。' }
+      { label: '01', title: '文化平等尊重', subtitle: 'RESPECT' },
+      { label: '02', title: '可持续文化旅游', subtitle: 'SUSTAINABLE' },
+      { label: '03', title: '深度沉浸体验', subtitle: 'IMMERSIVE' },
+      { label: '04', title: '教育赋能旅行', subtitle: 'EDUCATIONAL' }
     ],
     routes: []
   },

@@ -708,168 +708,69 @@ button::after {
 }
 
 .home-insight-panel {
-  margin: 4rpx 0 32rpx;
-  padding: 28rpx;
-  border-radius: 4rpx;
-  border: 1px solid rgba(20, 94, 168, 0.16);
-  background: rgba(248, 252, 255, 0.96);
+  margin: 4rpx 0 30rpx;
+  padding: 26rpx;
+  border-radius: 26rpx;
+  border: 2rpx solid rgba(20, 94, 168, 0.10);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(241, 247, 253, 0.94));
+  box-shadow: 0 14rpx 30rpx rgba(31, 98, 167, 0.07);
+}
+
+.culture-panel-head {
+  margin-bottom: 18rpx;
+}
+
+.culture-panel-kicker {
+  display: block;
+  color: #8aa0b6;
+  font-size: 17rpx;
+  letter-spacing: 4rpx;
 }
 
 .culture-panel-title {
-  color: #8aa0b6;
-  font-size: 23rpx;
-  letter-spacing: 8rpx;
-  margin-bottom: 24rpx;
-}
-
-.culture-panel-layout {
-  display: grid;
-  grid-template-columns: 220rpx 1fr;
-  gap: 24rpx;
-  align-items: center;
-  margin-bottom: 22rpx;
-}
-
-.culture-orbit {
-  position: relative;
-  width: 190rpx;
-  height: 190rpx;
-  margin: 0 auto;
-  border-radius: 50%;
-  border: 2rpx dashed #145ea8;
-}
-
-.culture-orbit-ring,
-.culture-orbit-axis,
-.culture-orbit-dot,
-.culture-orbit-core {
-  position: absolute;
-}
-
-.culture-orbit-ring {
-  inset: 18rpx;
-  border: 2rpx solid rgba(20, 94, 168, 0.42);
-  border-radius: 50%;
-}
-
-.culture-orbit-axis {
-  left: 28rpx;
-  right: 28rpx;
-  top: 94rpx;
-  height: 1px;
-  background: rgba(20, 94, 168, 0.38);
-}
-
-.culture-orbit-axis-v {
-  left: 94rpx;
-  top: 28rpx;
-  right: auto;
-  width: 1px;
-  height: 134rpx;
-}
-
-.culture-orbit-axis-d1,
-.culture-orbit-axis-d2 {
-  transform-origin: center;
-  transform: rotate(38deg);
-}
-
-.culture-orbit-axis-d2 {
-  transform: rotate(-38deg);
-}
-
-.culture-orbit-dot {
-  width: 16rpx;
-  height: 16rpx;
-  border-radius: 50%;
-  background: #d6a92a;
-}
-
-.culture-orbit-dot-top {
-  left: 87rpx;
-  top: 22rpx;
-}
-
-.culture-orbit-dot-right {
-  right: 22rpx;
-  top: 87rpx;
-}
-
-.culture-orbit-dot-bottom {
-  left: 87rpx;
-  bottom: 22rpx;
-}
-
-.culture-orbit-dot-left {
-  left: 22rpx;
-  top: 87rpx;
-}
-
-.culture-orbit-core {
-  left: 68rpx;
-  top: 68rpx;
-  width: 54rpx;
-  height: 54rpx;
-  border-radius: 50%;
-  border: 3rpx solid #d6a92a;
-  color: #145ea8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24rpx;
+  display: block;
+  margin-top: 8rpx;
+  color: #13263f;
+  font-size: 30rpx;
   font-weight: 800;
-  background: rgba(255, 247, 224, 0.72);
 }
 
-.culture-quote {
-  color: #8aa0b6;
-  font-family: 'Times New Roman', serif;
-  font-size: 21rpx;
-  font-style: italic;
-  line-height: 1.45;
-}
-
-.culture-principle-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16rpx;
+.culture-principle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12rpx;
 }
 
 .culture-principle-card {
-  display: grid;
-  grid-template-columns: 54rpx 1fr;
-  gap: 18rpx;
-  padding: 22rpx 20rpx;
-  border: 1px solid rgba(20, 94, 168, 0.18);
-  background: rgba(255, 255, 255, 0.78);
+  min-height: 158rpx;
+  padding: 15rpx 10rpx 13rpx;
+  border-radius: 18rpx;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(20, 94, 168, 0.08);
 }
 
 .culture-principle-mark {
   color: #d6a92a;
-  font-size: 38rpx;
+  font-size: 18rpx;
   font-weight: 900;
-  line-height: 1;
+  letter-spacing: 2rpx;
 }
 
 .culture-principle-title {
+  margin-top: 8rpx;
   color: #145ea8;
-  font-size: 27rpx;
+  font-size: 23rpx;
   font-weight: 800;
+  line-height: 1.25;
 }
 
 .culture-principle-subtitle {
-  margin-top: 4rpx;
+  margin-top: 7rpx;
   color: #c69422;
-  font-size: 16rpx;
+  font-size: 14rpx;
   font-weight: 800;
-  letter-spacing: 3rpx;
-}
-
-.culture-principle-copy {
-  margin-top: 12rpx;
-  color: #425b76;
-  font-size: 23rpx;
-  line-height: 1.65;
+  line-height: 1.35;
+  text-transform: uppercase;
 }
 
 .brand-manifesto {
