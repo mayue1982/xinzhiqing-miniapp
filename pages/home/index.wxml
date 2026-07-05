@@ -19,12 +19,36 @@
     </swiper>
     <view class="visual-mask"></view>
     <view class="visual-copy">
-      <text class="visual-badge">Global Mind Growth Journey</text>
+      <text class="visual-badge">Global Cultural Heritage Tourism</text>
       <view class="visual-title-en">Xinzhiqing
 Cultural Tourism</view>
-      <view class="visual-title-zh">心 之 清 文 旅 · 入 道 调 心 境</view>
-      <view class="visual-desc">在星空与自然之间，回到更清楚、更纯粹的自己。</view>
+      <view class="visual-title-zh">新知青文旅，以人文之心探索世界文明的深处</view>
+      <view class="visual-desc-en">Xinzhiqing Cultural Tourism explores the depth of world civilizations with a humanistic heart</view>
+      <view class="visual-actions">
+        <view class="visual-primary">探索目的地</view>
+        <view class="visual-secondary">Learn More</view>
+      </view>
     </view>
+  </view>
+
+  <view class="featured-route featured-route-editorial" data-id="{{featuredRoute.id}}" bindtap="openRoute">
+    <view class="featured-route-copy">
+      <text class="featured-route-tag">{{featuredRoute.tag}}</text>
+      <view class="featured-route-title">{{featuredRoute.title}}</view>
+      <view class="featured-route-desc">{{featuredRoute.desc}}</view>
+      <view class="featured-route-text">心之清文旅致力于以专业、深度的文化视角，带领旅行者超越观光，真正融入世界各地的文明精髓。</view>
+      <view class="featured-route-foot">
+        <text>{{featuredRoute.meta}}</text>
+        <text>查看详情</text>
+      </view>
+    </view>
+    <image class="featured-route-square" src="{{featuredRoute.image}}" mode="aspectFill"></image>
+  </view>
+
+  <view class="brand-manifesto">
+    <view class="manifesto-kicker">CULTURAL RESPECT · EDUCATIONAL DEPTH</view>
+    <view class="manifesto-copy">心之清文旅致力于以专业、深度的文化视角，带领旅行者超越观光，真正融入世界各地的文明精髓。我们相信，每一处文化遗产都是全人类共同的财富。</view>
+    <view class="manifesto-copy-en">Founded on cultural respect, educational depth, and global connectivity, Xinzhiqing Cultural Tourism bridges the ancient and modern, the local and global — creating transformative journeys that expand hearts and minds.</view>
   </view>
 
   <view class="search-entry">
@@ -44,20 +68,6 @@ Cultural Tourism</view>
         <view class="quick-shape quick-shape-c"></view>
       </view>
       <view class="quick-label">{{item.title}}</view>
-    </view>
-  </view>
-
-  <view class="featured-route" data-id="{{featuredRoute.id}}" bindtap="openRoute">
-    <image class="featured-route-image" src="{{featuredRoute.image}}" mode="aspectFill"></image>
-    <view class="featured-route-mask"></view>
-    <view class="featured-route-content">
-      <text class="featured-route-tag">{{featuredRoute.tag}}</text>
-      <view class="featured-route-title">{{featuredRoute.title}}</view>
-      <view class="featured-route-desc">{{featuredRoute.desc}}</view>
-      <view class="featured-route-foot">
-        <text>{{featuredRoute.meta}}</text>
-        <text>查看详情</text>
-      </view>
     </view>
   </view>
 
