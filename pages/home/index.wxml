@@ -19,8 +19,9 @@
     </swiper>
     <view class="visual-mask"></view>
     <view class="visual-copy">
-      <view class="visual-title-en">xinzhiqing cultural tourism</view>
-      <view class="visual-title-zh">新知青文旅，探索世界文明</view>
+      <view class="visual-title-en">xinzhiqing
+cultural tourism</view>
+      <view class="visual-title-zh">心之清文旅，探索世界文明</view>
       <view class="visual-desc-en">exploring the depth of world civilizations with humanistic heart</view>
     </view>
   </view>

@@ -344,10 +344,10 @@ button::after {
   z-index: 3;
   left: 30rpx;
   right: 30rpx;
-  bottom: 34rpx;
+  bottom: 30rpx;
   display: flex;
   flex-direction: column;
-  gap: 10rpx;
+  gap: 8rpx;
   pointer-events: none;
 }
 
@@ -364,19 +364,21 @@ button::after {
 
 .visual-title-en {
   color: #ffffff;
-  width: 560rpx;
-  font-family: 'Times New Roman', serif;
-  font-size: 46rpx;
-  line-height: 1.04;
+  width: 580rpx;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 58rpx;
+  line-height: 0.98;
   font-style: italic;
   font-weight: 700;
+  white-space: pre-line;
   text-shadow: 0 4rpx 12rpx rgba(0, 63, 112, 0.22);
 }
 
 .visual-title-zh {
   color: #edf7ff;
-  font-size: 28rpx;
-  letter-spacing: 3rpx;
+  margin-top: 4rpx;
+  font-size: 26rpx;
+  letter-spacing: 4rpx;
   text-shadow: 0 4rpx 12rpx rgba(0, 63, 112, 0.20);
 }
 
@@ -393,7 +395,7 @@ button::after {
   width: 560rpx;
   color: rgba(255, 255, 255, 0.82);
   font-family: 'Times New Roman', serif;
-  font-size: 25rpx;
+  font-size: 23rpx;
   font-style: italic;
   line-height: 1.45;
 }
