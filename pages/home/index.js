@@ -30,10 +30,10 @@ Page({
     quickItems: [],
     levels: [],
     culturePrinciples: [
-      { label: '01', title: '文化平等尊重', subtitle: 'RESPECT' },
-      { label: '02', title: '可持续文化旅游', subtitle: 'SUSTAINABLE' },
-      { label: '03', title: '深度沉浸体验', subtitle: 'IMMERSIVE' },
-      { label: '04', title: '教育赋能旅行', subtitle: 'EDUCATIONAL' }
+      { label: '01', title: '文化平等尊重', titleLines: ['文化', '平等', '尊重'] },
+      { label: '02', title: '可持续文化旅游', titleLines: ['可持续', '文化', '旅游'] },
+      { label: '03', title: '深度沉浸体验', titleLines: ['深度', '沉浸', '体验'] },
+      { label: '04', title: '教育赋能旅行', titleLines: ['教育', '赋能', '旅行'] }
     ],
     routes: []
   },

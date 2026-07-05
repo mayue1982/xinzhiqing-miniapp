@@ -709,27 +709,19 @@ button::after {
 
 .home-insight-panel {
   margin: 4rpx 0 30rpx;
-  padding: 26rpx;
-  border-radius: 26rpx;
+  padding: 24rpx;
+  border-radius: 24rpx;
   border: 2rpx solid rgba(20, 94, 168, 0.10);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(241, 247, 253, 0.94));
   box-shadow: 0 14rpx 30rpx rgba(31, 98, 167, 0.07);
 }
 
 .culture-panel-head {
-  margin-bottom: 18rpx;
-}
-
-.culture-panel-kicker {
-  display: block;
-  color: #8aa0b6;
-  font-size: 17rpx;
-  letter-spacing: 4rpx;
+  margin-bottom: 16rpx;
 }
 
 .culture-panel-title {
   display: block;
-  margin-top: 8rpx;
   color: #13263f;
   font-size: 30rpx;
   font-weight: 800;
@@ -738,15 +730,18 @@ button::after {
 .culture-principle-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12rpx;
+  gap: 14rpx;
 }
 
 .culture-principle-card {
-  min-height: 158rpx;
-  padding: 15rpx 10rpx 13rpx;
+  min-height: 188rpx;
+  padding: 15rpx 8rpx 16rpx;
   border-radius: 18rpx;
   background: rgba(255, 255, 255, 0.84);
   border: 1px solid rgba(20, 94, 168, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .culture-principle-mark {
@@ -754,23 +749,26 @@ button::after {
   font-size: 18rpx;
   font-weight: 900;
   letter-spacing: 2rpx;
+  margin-bottom: 10rpx;
 }
 
 .culture-principle-title {
-  margin-top: 8rpx;
+  flex: 1;
   color: #145ea8;
-  font-size: 23rpx;
+  font-size: 24rpx;
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1.28;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rpx;
+  text-align: center;
 }
 
-.culture-principle-subtitle {
-  margin-top: 7rpx;
-  color: #c69422;
-  font-size: 14rpx;
-  font-weight: 800;
-  line-height: 1.35;
-  text-transform: uppercase;
+.culture-principle-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .brand-manifesto {

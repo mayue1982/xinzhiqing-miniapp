@@ -61,14 +61,14 @@
 
   <view class="home-insight-panel">
     <view class="culture-panel-head">
-      <text class="culture-panel-kicker">CULTURAL UNDERSTANDING</text>
       <text class="culture-panel-title">文化理解的核心原则</text>
     </view>
     <view class="culture-principle-grid">
       <view wx:for="{{culturePrinciples}}" wx:key="title" class="culture-principle-card">
         <view class="culture-principle-mark">{{item.label}}</view>
-        <view class="culture-principle-title">{{item.title}}</view>
-        <view class="culture-principle-subtitle">{{item.subtitle}}</view>
+        <view class="culture-principle-title" aria-label="{{item.title}}">
+          <text wx:for="{{item.titleLines}}" wx:for-item="line" wx:key="*this" class="culture-principle-line">{{line}}</text>
+        </view>
       </view>
     </view>
   </view>
