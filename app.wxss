@@ -365,12 +365,12 @@ button::after {
 .visual-title-en {
   color: #ffffff;
   width: 580rpx;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 58rpx;
-  line-height: 0.98;
-  font-style: italic;
-  font-weight: 700;
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 54rpx;
+  line-height: 1.08;
+  font-weight: 800;
   white-space: pre-line;
+  letter-spacing: 1rpx;
   text-shadow: 0 4rpx 12rpx rgba(0, 63, 112, 0.22);
 }
 
