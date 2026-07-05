@@ -697,6 +697,7 @@ button::after {
 }
 
 .brand-manifesto {
+  margin-top: 28rpx;
   margin-bottom: 22rpx;
   padding: 28rpx;
   border-left: 6rpx solid #d6a92a;

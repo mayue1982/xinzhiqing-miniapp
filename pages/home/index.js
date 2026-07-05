@@ -5,8 +5,8 @@ Page({
     featuredRoute: {
       id: 'route-xj-aug',
       image: '/assets/images/route-xinjiang.jpg',
-      tag: '8月主推',
-      title: '新疆心灵成长班',
+      tag: '精品路线',
+      title: '新疆心灵之旅',
       desc: '天山草原、文化游学与身心成长体验',
       meta: 'Xinjiang · August'
     },
@@ -38,23 +38,28 @@ Page({
   },
   async loadPage() {
     const res = await api.getBootstrap()
-    const routeImages = [
-      '/assets/images/route-training.jpg',
-      '/assets/images/route-healing.jpg',
-      '/assets/images/route-culture.jpg',
-      '/assets/images/route-xinjiang.jpg'
+    const routeConfig = [
+      { id: 'route-001', image: '/assets/images/route-training.jpg' },
+      { id: 'route-003', image: '/assets/images/route-culture.jpg' },
+      { id: 'route-002', image: '/assets/images/route-healing.jpg' },
+      { id: 'route-004', image: '/assets/images/route-xinjiang.jpg' }
     ]
     const quickIconClasses = ['quick-visual-training', 'quick-visual-renewal', 'quick-visual-healing', 'quick-visual-travel']
+    const routesById = (res.data.routes || []).reduce((map, route) => {
+      map[route.id] = route
+      return map
+    }, {})
+    const routes = routeConfig
+      .map(config => routesById[config.id] && {
+        ...routesById[config.id],
+        image: config.image
+      })
+      .filter(Boolean)
     const quickItems = (res.data.quickItems || []).map((item, index) => ({
       ...item,
-      iconClass: quickIconClasses[index % quickIconClasses.length]
+      iconClass: quickIconClasses[index % quickIconClasses.length],
+      routeId: routes[index] && routes[index].id
     }))
-    const routes = (res.data.routes || [])
-      .filter(item => item.id !== this.data.featuredRoute.id)
-      .map((item, index) => ({
-        ...item,
-        image: routeImages[index % routeImages.length]
-      }))
     this.setData({
       quickItems,
       levels: res.data.levels || [],
@@ -63,6 +68,7 @@ Page({
   },
   openRoute(e) {
     const { id } = e.currentTarget.dataset
+    if (!id) return
     wx.navigateTo({ url: `/pages/route-detail/index?id=${id}` })
   },
   openGrowth() {

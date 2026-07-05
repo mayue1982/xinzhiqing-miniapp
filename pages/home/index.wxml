@@ -25,26 +25,6 @@
     </view>
   </view>
 
-  <view class="featured-route featured-route-editorial" data-id="{{featuredRoute.id}}" bindtap="openRoute">
-    <view class="featured-route-copy">
-      <text class="featured-route-tag">{{featuredRoute.tag}}</text>
-      <view class="featured-route-title">{{featuredRoute.title}}</view>
-      <view class="featured-route-desc">{{featuredRoute.desc}}</view>
-      <view class="featured-route-text">心之清文旅致力于以专业、深度的文化视角，带领旅行者超越观光，真正融入世界各地的文明精髓。</view>
-      <view class="featured-route-foot">
-        <text>{{featuredRoute.meta}}</text>
-        <text>查看详情</text>
-      </view>
-    </view>
-    <image class="featured-route-square" src="{{featuredRoute.image}}" mode="aspectFill"></image>
-  </view>
-
-  <view class="brand-manifesto">
-    <view class="manifesto-kicker">CULTURAL RESPECT · EDUCATIONAL DEPTH</view>
-    <view class="manifesto-copy">心之清文旅致力于以专业、深度的文化视角，带领旅行者超越观光，真正融入世界各地的文明精髓。我们相信，每一处文化遗产都是全人类共同的财富。</view>
-    <view class="manifesto-copy-en">Founded on cultural respect, educational depth, and global connectivity, Xinzhiqing Cultural Tourism bridges the ancient and modern, the local and global — creating transformative journeys that expand hearts and minds.</view>
-  </view>
-
   <view class="search-entry">
     <view class="search-symbol"></view>
     <view class="search-copy">
@@ -55,7 +35,7 @@
   </view>
 
   <view class="quick-grid quick-grid-illustrated">
-    <view wx:for="{{quickItems}}" wx:key="title" class="quick-card">
+    <view wx:for="{{quickItems}}" wx:key="title" class="quick-card" data-id="{{item.routeId}}" bindtap="openRoute">
       <view class="quick-visual {{item.iconClass}}">
         <view class="quick-shape quick-shape-a"></view>
         <view class="quick-shape quick-shape-b"></view>
@@ -63,6 +43,20 @@
       </view>
       <view class="quick-label">{{item.title}}</view>
     </view>
+  </view>
+
+  <view class="featured-route featured-route-editorial" data-id="{{featuredRoute.id}}" bindtap="openRoute">
+    <view class="featured-route-copy">
+      <text class="featured-route-tag">{{featuredRoute.tag}}</text>
+      <view class="featured-route-title">{{featuredRoute.title}}</view>
+      <view class="featured-route-desc">{{featuredRoute.desc}}</view>
+      <view class="featured-route-text">天山草原、文化游学与身心成长体验。</view>
+      <view class="featured-route-foot">
+        <text>{{featuredRoute.meta}}</text>
+        <text>查看详情</text>
+      </view>
+    </view>
+    <image class="featured-route-square" src="{{featuredRoute.image}}" mode="aspectFill"></image>
   </view>
 
   <view class="section-head">
@@ -79,5 +73,11 @@
         <view class="card-copy">{{item.desc}}</view>
       </view>
     </view>
+  </view>
+
+  <view class="brand-manifesto">
+    <view class="manifesto-kicker">CULTURAL RESPECT · EDUCATIONAL DEPTH</view>
+    <view class="manifesto-copy">心之清文旅致力于以专业、深度的文化视角，带领旅行者超越观光，真正融入世界各地的文明精髓。我们相信，每一处文化遗产都是全人类共同的财富。</view>
+    <view class="manifesto-copy-en">Founded on cultural respect, educational depth, and global connectivity, Xinzhiqing Cultural Tourism bridges the ancient and modern, the local and global — creating transformative journeys that expand hearts and minds.</view>
   </view>
 </view>
