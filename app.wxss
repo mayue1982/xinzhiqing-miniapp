@@ -708,66 +708,168 @@ button::after {
 }
 
 .home-insight-panel {
-  margin: 4rpx 0 30rpx;
-  padding: 26rpx;
-  border-radius: 26rpx;
-  border: 2rpx solid rgba(20, 94, 168, 0.10);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(241, 247, 253, 0.94));
-  box-shadow: 0 14rpx 30rpx rgba(31, 98, 167, 0.07);
+  margin: 4rpx 0 32rpx;
+  padding: 28rpx;
+  border-radius: 4rpx;
+  border: 1px solid rgba(20, 94, 168, 0.16);
+  background: rgba(248, 252, 255, 0.96);
 }
 
-.home-insight-head {
-  margin-bottom: 20rpx;
-}
-
-.home-insight-kicker {
-  display: block;
+.culture-panel-title {
   color: #8aa0b6;
-  font-size: 18rpx;
-  letter-spacing: 4rpx;
+  font-size: 23rpx;
+  letter-spacing: 8rpx;
+  margin-bottom: 24rpx;
 }
 
-.home-insight-title {
-  display: block;
-  margin-top: 8rpx;
-  color: #13263f;
-  font-size: 30rpx;
-  font-weight: 800;
-}
-
-.home-insight-grid {
+.culture-panel-layout {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12rpx;
+  grid-template-columns: 220rpx 1fr;
+  gap: 24rpx;
+  align-items: center;
+  margin-bottom: 22rpx;
 }
 
-.home-insight-item {
-  min-height: 168rpx;
-  padding: 16rpx 14rpx;
-  border-radius: 18rpx;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(20, 94, 168, 0.08);
+.culture-orbit {
+  position: relative;
+  width: 190rpx;
+  height: 190rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2rpx dashed #145ea8;
 }
 
-.home-insight-num {
-  color: #d6a92a;
-  font-size: 18rpx;
-  font-weight: 800;
-  letter-spacing: 2rpx;
+.culture-orbit-ring,
+.culture-orbit-axis,
+.culture-orbit-dot,
+.culture-orbit-core {
+  position: absolute;
 }
 
-.home-insight-name {
-  margin-top: 8rpx;
+.culture-orbit-ring {
+  inset: 18rpx;
+  border: 2rpx solid rgba(20, 94, 168, 0.42);
+  border-radius: 50%;
+}
+
+.culture-orbit-axis {
+  left: 28rpx;
+  right: 28rpx;
+  top: 94rpx;
+  height: 1px;
+  background: rgba(20, 94, 168, 0.38);
+}
+
+.culture-orbit-axis-v {
+  left: 94rpx;
+  top: 28rpx;
+  right: auto;
+  width: 1px;
+  height: 134rpx;
+}
+
+.culture-orbit-axis-d1,
+.culture-orbit-axis-d2 {
+  transform-origin: center;
+  transform: rotate(38deg);
+}
+
+.culture-orbit-axis-d2 {
+  transform: rotate(-38deg);
+}
+
+.culture-orbit-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: #d6a92a;
+}
+
+.culture-orbit-dot-top {
+  left: 87rpx;
+  top: 22rpx;
+}
+
+.culture-orbit-dot-right {
+  right: 22rpx;
+  top: 87rpx;
+}
+
+.culture-orbit-dot-bottom {
+  left: 87rpx;
+  bottom: 22rpx;
+}
+
+.culture-orbit-dot-left {
+  left: 22rpx;
+  top: 87rpx;
+}
+
+.culture-orbit-core {
+  left: 68rpx;
+  top: 68rpx;
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  border: 3rpx solid #d6a92a;
   color: #145ea8;
-  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-weight: 800;
+  background: rgba(255, 247, 224, 0.72);
+}
+
+.culture-quote {
+  color: #8aa0b6;
+  font-family: 'Times New Roman', serif;
+  font-size: 21rpx;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.culture-principle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.culture-principle-card {
+  display: grid;
+  grid-template-columns: 54rpx 1fr;
+  gap: 18rpx;
+  padding: 22rpx 20rpx;
+  border: 1px solid rgba(20, 94, 168, 0.18);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.culture-principle-mark {
+  color: #d6a92a;
+  font-size: 38rpx;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.culture-principle-title {
+  color: #145ea8;
+  font-size: 27rpx;
   font-weight: 800;
 }
 
-.home-insight-copy {
-  margin-top: 8rpx;
-  color: #70849a;
-  font-size: 21rpx;
-  line-height: 1.45;
+.culture-principle-subtitle {
+  margin-top: 4rpx;
+  color: #c69422;
+  font-size: 16rpx;
+  font-weight: 800;
+  letter-spacing: 3rpx;
+}
+
+.culture-principle-copy {
+  margin-top: 12rpx;
+  color: #425b76;
+  font-size: 23rpx;
+  line-height: 1.65;
 }
 
 .brand-manifesto {
@@ -937,6 +1039,14 @@ button::after {
   display: block;
   border-radius: 16rpx;
   background: #eef6fd;
+}
+
+.article-list-index {
+  color: #d6a92a;
+  font-size: 18rpx;
+  font-weight: 800;
+  letter-spacing: 3rpx;
+  margin-bottom: 6rpx;
 }
 
 .article-detail-image {

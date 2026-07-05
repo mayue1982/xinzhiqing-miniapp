@@ -19,12 +19,18 @@ Inner Clarity</view>
   </view>
 
   <view class="chip-row">
-    <view wx:for="{{chips}}" wx:key="articleId" class="chip {{index === 0 ? 'chip-active' : ''}}" data-id="{{item.articleId}}" bindtap="openChip">{{item.title}}</view>
+    <view wx:for="{{chips}}" wx:key="category" class="chip {{item.category === selectedCategory ? 'chip-active' : ''}}" data-category="{{item.category}}" bindtap="selectCategory">{{item.title}}</view>
   </view>
 
-  <view wx:for="{{articles}}" wx:key="id" class="list-card article-list-card" data-id="{{item.id}}" bindtap="openArticle">
+  <view class="section-head">
+    <text class="section-head-title">{{selectedCategoryTitle}}</text>
+    <text class="section-head-subtitle">LIST</text>
+  </view>
+
+  <view wx:for="{{visibleArticles}}" wx:key="id" class="list-card article-list-card" data-id="{{item.id}}" bindtap="openArticle">
     <image class="article-thumb-image" src="{{item.image}}" mode="aspectFill"></image>
     <view>
+      <view class="article-list-index">0{{index + 1}}</view>
       <view class="card-title">{{item.title}}</view>
       <view class="card-copy">{{item.desc}}</view>
     </view>

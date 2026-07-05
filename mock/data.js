@@ -49,6 +49,7 @@ const routes = [
 const articles = [
   {
     id: 'article-healing',
+    category: 'healing',
     title: '疗愈：先让身心重新安静下来',
     desc: '从呼吸、环境与节奏开始，慢慢恢复内在稳定。',
     image: '/assets/images/route-healing.jpg',
@@ -56,6 +57,7 @@ const articles = [
   },
   {
     id: 'article-nature',
+    category: 'nature',
     title: '自然：山川是最好的课堂',
     desc: '在草原、雪山和星空之间，重新打开感知。',
     image: '/assets/images/route-training.jpg',
@@ -63,6 +65,7 @@ const articles = [
   },
   {
     id: 'article-story',
+    category: 'story',
     title: '故事：每条路线都有文明的来处',
     desc: '在地方人物、文化遗产与生活现场里理解世界。',
     image: '/assets/images/route-culture.jpg',

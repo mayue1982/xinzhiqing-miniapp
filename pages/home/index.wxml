@@ -60,15 +60,30 @@
   </view>
 
   <view class="home-insight-panel">
-    <view class="home-insight-head">
-      <text class="home-insight-kicker">EDITORIAL NOTES</text>
-      <text class="home-insight-title">旅行不止抵达，也是一种内在整理</text>
+    <view class="culture-panel-title">文化理解的核心原则</view>
+    <view class="culture-panel-layout">
+      <view class="culture-orbit">
+        <view class="culture-orbit-ring"></view>
+        <view class="culture-orbit-axis culture-orbit-axis-h"></view>
+        <view class="culture-orbit-axis culture-orbit-axis-v"></view>
+        <view class="culture-orbit-axis culture-orbit-axis-d1"></view>
+        <view class="culture-orbit-axis culture-orbit-axis-d2"></view>
+        <view class="culture-orbit-dot culture-orbit-dot-top"></view>
+        <view class="culture-orbit-dot culture-orbit-dot-right"></view>
+        <view class="culture-orbit-dot culture-orbit-dot-bottom"></view>
+        <view class="culture-orbit-dot culture-orbit-dot-left"></view>
+        <view class="culture-orbit-core">旅</view>
+      </view>
+      <view class="culture-quote">"The world is a book, and those who do not travel read only one page."</view>
     </view>
-    <view class="home-insight-grid">
-      <view wx:for="{{insightItems}}" wx:key="title" class="home-insight-item">
-        <text class="home-insight-num">{{item.label}}</text>
-        <view class="home-insight-name">{{item.title}}</view>
-        <view class="home-insight-copy">{{item.copy}}</view>
+    <view class="culture-principle-list">
+      <view wx:for="{{culturePrinciples}}" wx:key="title" class="culture-principle-card">
+        <view class="culture-principle-mark">{{item.label}}</view>
+        <view class="culture-principle-body">
+          <view class="culture-principle-title">{{item.title}}</view>
+          <view class="culture-principle-subtitle">{{item.subtitle}}</view>
+          <view class="culture-principle-copy">{{item.copy}}</view>
+        </view>
       </view>
     </view>
   </view>
