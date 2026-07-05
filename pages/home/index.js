@@ -64,5 +64,8 @@ Page({
   openRoute(e) {
     const { id } = e.currentTarget.dataset
     wx.navigateTo({ url: `/pages/route-detail/index?id=${id}` })
+  },
+  openGrowth() {
+    wx.switchTab({ url: '/pages/growth/index' })
   }
 })

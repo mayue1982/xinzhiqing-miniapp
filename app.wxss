@@ -295,23 +295,23 @@ button::after {
 
 .visual-hero-shell {
   position: relative;
-  height: 780rpx;
+  height: 430rpx;
   margin-top: 6rpx;
-  border-radius: 0;
+  border-radius: 30rpx;
   overflow: hidden;
-  box-shadow: 0 18rpx 40rpx rgba(12, 74, 135, 0.16);
+  box-shadow: 0 16rpx 32rpx rgba(31, 98, 167, 0.12);
 }
 
 .visual-swiper-hero {
-  height: 780rpx;
+  height: 430rpx;
   margin: 0;
-  border-radius: 0;
+  border-radius: 30rpx;
   box-shadow: none;
 }
 
 .visual-swiper-hero .visual-slide {
-  height: 780rpx;
-  border-radius: 0;
+  height: 430rpx;
+  border-radius: 30rpx;
 }
 
 .visual-slide {
@@ -334,22 +334,20 @@ button::after {
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(180deg, rgba(2, 83, 151, 0.94), rgba(2, 83, 151, 0.82)),
-    linear-gradient(90deg, rgba(4, 60, 115, 0.88), rgba(18, 103, 176, 0.56) 64%, rgba(4, 60, 115, 0.40));
+    linear-gradient(90deg, rgba(8, 46, 90, 0.86), rgba(18, 82, 146, 0.46) 58%, rgba(8, 46, 90, 0.24)),
+    linear-gradient(180deg, rgba(8, 46, 90, 0.18), rgba(8, 46, 90, 0.52));
   pointer-events: none;
 }
 
 .visual-copy {
   position: absolute;
   z-index: 3;
-  left: 48rpx;
-  right: 48rpx;
-  top: 64rpx;
-  bottom: 46rpx;
+  left: 30rpx;
+  right: 30rpx;
+  bottom: 34rpx;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  gap: 10rpx;
   pointer-events: none;
 }
 
@@ -366,23 +364,19 @@ button::after {
 
 .visual-title-en {
   color: #ffffff;
-  width: 590rpx;
-  margin-top: 72rpx;
+  width: 560rpx;
   font-family: 'Times New Roman', serif;
-  font-size: 68rpx;
+  font-size: 48rpx;
   line-height: 1.04;
   font-style: italic;
   font-weight: 700;
-  white-space: pre-line;
   text-shadow: 0 4rpx 12rpx rgba(0, 32, 70, 0.28);
 }
 
 .visual-title-zh {
-  margin-top: 38rpx;
-  color: rgba(237, 247, 255, 0.74);
-  font-size: 30rpx;
-  letter-spacing: 5rpx;
-  line-height: 1.55;
+  color: #edf7ff;
+  font-size: 28rpx;
+  letter-spacing: 3rpx;
   text-shadow: 0 4rpx 12rpx rgba(0, 32, 70, 0.24);
 }
 
@@ -397,43 +391,11 @@ button::after {
 
 .visual-desc-en {
   width: 560rpx;
-  margin-top: 18rpx;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.82);
   font-family: 'Times New Roman', serif;
-  font-size: 28rpx;
+  font-size: 25rpx;
   font-style: italic;
   line-height: 1.45;
-}
-
-.visual-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28rpx;
-  width: 100%;
-  margin-top: 30rpx;
-}
-
-.visual-primary,
-.visual-secondary {
-  min-height: 94rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28rpx;
-  font-weight: 800;
-  letter-spacing: 4rpx;
-}
-
-.visual-primary {
-  color: #263216;
-  background: #d6a92a;
-}
-
-.visual-secondary {
-  color: #ffffff;
-  border: 2rpx solid rgba(255, 255, 255, 0.32);
-  background: rgba(255, 255, 255, 0.04);
-  text-transform: uppercase;
 }
 
 .search-entry {

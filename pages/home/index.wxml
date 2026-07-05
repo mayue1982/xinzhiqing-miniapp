@@ -19,15 +19,9 @@
     </swiper>
     <view class="visual-mask"></view>
     <view class="visual-copy">
-      <text class="visual-badge">Global Cultural Heritage Tourism</text>
-      <view class="visual-title-en">Xinzhiqing
-Cultural Tourism</view>
-      <view class="visual-title-zh">新知青文旅，以人文之心探索世界文明的深处</view>
-      <view class="visual-desc-en">Xinzhiqing Cultural Tourism explores the depth of world civilizations with a humanistic heart</view>
-      <view class="visual-actions">
-        <view class="visual-primary">探索目的地</view>
-        <view class="visual-secondary">Learn More</view>
-      </view>
+      <view class="visual-title-en">xinzhiqing cultural tourism</view>
+      <view class="visual-title-zh">新知青文旅，探索世界文明</view>
+      <view class="visual-desc-en">exploring the depth of world civilizations with humanistic heart</view>
     </view>
   </view>
 
@@ -57,7 +51,7 @@ Cultural Tourism</view>
       <text class="search-title">您想去哪里</text>
       <text class="search-subtitle">目的地｜出行人｜时间</text>
     </view>
-    <view class="search-btn">搜索</view>
+    <view class="search-btn" bindtap="openGrowth">搜索</view>
   </view>
 
   <view class="quick-grid quick-grid-illustrated">
