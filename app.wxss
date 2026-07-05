@@ -73,49 +73,6 @@ button::after {
   gap: 18rpx;
 }
 
-.brand-wrap-logo {
-  gap: 16rpx;
-}
-
-.brand-mark {
-  position: relative;
-  width: 92rpx;
-  height: 68rpx;
-  border-radius: 18rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #145ea8;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(238, 246, 253, 0.92));
-  border: 2rpx solid rgba(20, 94, 168, 0.12);
-  box-shadow: 0 12rpx 24rpx rgba(31, 98, 167, 0.08);
-}
-
-.brand-mark::before {
-  content: '';
-  position: absolute;
-  left: 14rpx;
-  right: 14rpx;
-  bottom: 12rpx;
-  height: 6rpx;
-  border-radius: 999rpx;
-  background: linear-gradient(90deg, transparent, #efbc52, transparent);
-}
-
-.brand-mark-main {
-  font-size: 32rpx;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.brand-mark-sub {
-  margin-left: 2rpx;
-  color: #4ea4f5;
-  font-size: 24rpx;
-  font-weight: 800;
-  line-height: 1;
-}
-
 .brand-dot {
   width: 72rpx;
   height: 72rpx;
@@ -366,32 +323,55 @@ button::after {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(13, 48, 92, 0.68), rgba(13, 48, 92, 0.12) 58%, rgba(13, 48, 92, 0.22)),
-    linear-gradient(180deg, transparent 42%, rgba(13, 48, 92, 0.38));
+    linear-gradient(90deg, rgba(8, 46, 90, 0.86), rgba(18, 82, 146, 0.46) 58%, rgba(8, 46, 90, 0.24)),
+    linear-gradient(180deg, rgba(8, 46, 90, 0.18), rgba(8, 46, 90, 0.52));
 }
 
 .visual-copy {
   position: absolute;
-  left: 28rpx;
-  bottom: 28rpx;
+  left: 30rpx;
+  right: 30rpx;
+  bottom: 34rpx;
   display: flex;
   flex-direction: column;
-  gap: 8rpx;
+  gap: 10rpx;
 }
 
-.visual-subtitle {
+.visual-badge {
+  align-self: flex-start;
+  padding: 7rpx 14rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.28);
+  border-radius: 999rpx;
   color: #ffe0a0;
   font-size: 18rpx;
   letter-spacing: 4rpx;
   text-transform: uppercase;
 }
 
-.visual-title {
+.visual-title-en {
   color: #ffffff;
-  font-size: 34rpx;
-  font-weight: 800;
-  letter-spacing: 2rpx;
+  width: 520rpx;
+  font-family: 'Times New Roman', serif;
+  font-size: 56rpx;
+  line-height: 1.02;
+  font-style: italic;
+  font-weight: 700;
+  white-space: pre-line;
   text-shadow: 0 4rpx 12rpx rgba(0, 32, 70, 0.28);
+}
+
+.visual-title-zh {
+  color: #edf7ff;
+  font-size: 25rpx;
+  letter-spacing: 5rpx;
+  text-shadow: 0 4rpx 12rpx rgba(0, 32, 70, 0.24);
+}
+
+.visual-desc {
+  width: 500rpx;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 24rpx;
+  line-height: 1.45;
 }
 
 .search-entry {

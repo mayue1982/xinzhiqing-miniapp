@@ -1,10 +1,7 @@
 <view class="screen-page home-page">
   <view class="custom-nav">
-    <view class="brand-wrap brand-wrap-logo">
-      <view class="brand-mark">
-        <text class="brand-mark-main">心</text>
-        <text class="brand-mark-sub">清</text>
-      </view>
+    <view class="brand-wrap">
+      <view class="brand-dot">心</view>
       <view class="brand-stack">
         <text class="brand-stack-title">心之清文旅</text>
         <text class="brand-stack-subtitle">XINZHIQING CULTURAL TOURISM</text>
@@ -18,8 +15,11 @@
         <image class="visual-image" src="{{item.image}}" mode="aspectFill"></image>
         <view class="visual-mask"></view>
         <view class="visual-copy">
-          <text class="visual-subtitle">{{item.subtitle}}</text>
-          <text class="visual-title">{{item.title}}</text>
+          <text class="visual-badge">Global Mind Growth Journey</text>
+          <view class="visual-title-en">Xinzhiqing
+Cultural Tourism</view>
+          <view class="visual-title-zh">心 之 清 文 旅 · 入 道 调 心 境</view>
+          <view class="visual-desc">在星空与自然之间，回到更清楚、更纯粹的自己。</view>
         </view>
       </view>
     </swiper-item>
