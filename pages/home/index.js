@@ -2,6 +2,14 @@ const api = require('../../services/api')
 
 Page({
   data: {
+    featuredRoute: {
+      id: 'route-xj-aug',
+      image: '/assets/images/route-xinjiang.jpg',
+      tag: '8月主推',
+      title: '新疆心灵成长班',
+      desc: '天山草原、文化游学与身心成长体验',
+      meta: 'Xinjiang · August'
+    },
     carouselItems: [
       {
         image: '/assets/images/carousel-stars.jpg',
@@ -31,18 +39,26 @@ Page({
   async loadPage() {
     const res = await api.getBootstrap()
     const routeImages = [
-      '/assets/images/carousel-stars.jpg',
-      '/assets/images/carousel-healing.jpg',
-      '/assets/images/carousel-culture.jpg',
-      '/assets/images/carousel-stars.jpg'
+      '/assets/images/route-training.jpg',
+      '/assets/images/route-healing.jpg',
+      '/assets/images/route-culture.jpg',
+      '/assets/images/route-xinjiang.jpg'
     ]
-    this.setData({
-      quickItems: res.data.quickItems || [],
-      levels: res.data.levels || [],
-      routes: (res.data.routes || []).map((item, index) => ({
+    const quickIconClasses = ['quick-visual-training', 'quick-visual-renewal', 'quick-visual-healing', 'quick-visual-travel']
+    const quickItems = (res.data.quickItems || []).map((item, index) => ({
+      ...item,
+      iconClass: quickIconClasses[index % quickIconClasses.length]
+    }))
+    const routes = (res.data.routes || [])
+      .filter(item => item.id !== this.data.featuredRoute.id)
+      .map((item, index) => ({
         ...item,
         image: routeImages[index % routeImages.length]
       }))
+    this.setData({
+      quickItems,
+      levels: res.data.levels || [],
+      routes
     })
   },
   openRoute(e) {

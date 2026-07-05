@@ -1,35 +1,18 @@
-<view class="screen-page">
+<view class="screen-page home-page">
   <view class="custom-nav">
-    <view class="brand-wrap">
-      <view class="brand-dot">清</view>
+    <view class="brand-wrap brand-wrap-logo">
+      <view class="brand-mark">
+        <text class="brand-mark-main">心</text>
+        <text class="brand-mark-sub">清</text>
+      </view>
       <view class="brand-stack">
         <text class="brand-stack-title">心之清文旅</text>
-        <text class="brand-stack-subtitle">XINZHIQING</text>
+        <text class="brand-stack-subtitle">XINZHIQING CULTURAL TOURISM</text>
       </view>
     </view>
   </view>
 
-  <view class="hero-card">
-    <text class="hero-badge">Global Mind Growth Journey</text>
-    <view class="hero-title-en">Xinzhiqing
-Cultural Tourism</view>
-    <view class="hero-title-zh">心 之 清 文 旅 · 入 道 调 心 境</view>
-    <view class="hero-copy">在星空与自然之间，回到更清楚、更纯粹的自己。</view>
-    <view class="hero-copy-en">A mindful path shaped by nature, stillness, and long-term inner clarity.</view>
-    <view class="hero-actions">
-      <button class="primary-btn">开启体验</button>
-      <button class="secondary-btn">了解更多</button>
-    </view>
-  </view>
-
-  <view class="quick-grid">
-    <view wx:for="{{quickItems}}" wx:key="title" class="quick-card">
-      <view class="quick-icon">{{item.icon}}</view>
-      <view class="quick-label">{{item.title}}</view>
-    </view>
-  </view>
-
-  <swiper class="visual-swiper" autoplay circular interval="4200" duration="600" indicator-dots indicator-color="rgba(255,255,255,.45)" indicator-active-color="#efbc52">
+  <swiper class="visual-swiper visual-swiper-hero" autoplay circular interval="4200" duration="600" indicator-dots indicator-color="rgba(255,255,255,.45)" indicator-active-color="#efbc52">
     <swiper-item wx:for="{{carouselItems}}" wx:key="title">
       <view class="visual-slide">
         <image class="visual-image" src="{{item.image}}" mode="aspectFill"></image>
@@ -41,6 +24,40 @@ Cultural Tourism</view>
       </view>
     </swiper-item>
   </swiper>
+
+  <view class="search-entry">
+    <view class="search-symbol"></view>
+    <view class="search-copy">
+      <text class="search-title">您想去哪里</text>
+      <text class="search-subtitle">目的地｜出行人｜时间</text>
+    </view>
+    <view class="search-btn">搜索</view>
+  </view>
+
+  <view class="quick-grid quick-grid-illustrated">
+    <view wx:for="{{quickItems}}" wx:key="title" class="quick-card">
+      <view class="quick-visual {{item.iconClass}}">
+        <view class="quick-shape quick-shape-a"></view>
+        <view class="quick-shape quick-shape-b"></view>
+        <view class="quick-shape quick-shape-c"></view>
+      </view>
+      <view class="quick-label">{{item.title}}</view>
+    </view>
+  </view>
+
+  <view class="featured-route" data-id="{{featuredRoute.id}}" bindtap="openRoute">
+    <image class="featured-route-image" src="{{featuredRoute.image}}" mode="aspectFill"></image>
+    <view class="featured-route-mask"></view>
+    <view class="featured-route-content">
+      <text class="featured-route-tag">{{featuredRoute.tag}}</text>
+      <view class="featured-route-title">{{featuredRoute.title}}</view>
+      <view class="featured-route-desc">{{featuredRoute.desc}}</view>
+      <view class="featured-route-foot">
+        <text>{{featuredRoute.meta}}</text>
+        <text>查看详情</text>
+      </view>
+    </view>
+  </view>
 
   <view class="section-head">
     <text class="section-head-title">成长体系</text>
@@ -56,12 +73,14 @@ Cultural Tourism</view>
     <text class="section-head-subtitle">FEATURED</text>
   </view>
 
-  <view class="two-col-grid">
-    <view wx:for="{{routes}}" wx:key="id" class="glass-card" data-id="{{item.id}}" bindtap="openRoute">
+  <view class="route-square-grid">
+    <view wx:for="{{routes}}" wx:key="id" class="route-square-card" data-id="{{item.id}}" bindtap="openRoute">
       <image class="route-thumb-image" src="{{item.image}}" mode="aspectFill"></image>
-      <view class="card-title">{{item.title}}</view>
-      <view class="card-subtitle">{{item.subtitle}}</view>
-      <view class="card-copy">{{item.desc}}</view>
+      <view class="route-square-body">
+        <view class="card-title">{{item.title}}</view>
+        <view class="card-subtitle">{{item.subtitle}}</view>
+        <view class="card-copy">{{item.desc}}</view>
+      </view>
     </view>
   </view>
 </view>
