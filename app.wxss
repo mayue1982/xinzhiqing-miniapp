@@ -293,10 +293,20 @@ button::after {
   box-shadow: 0 16rpx 32rpx rgba(31, 98, 167, 0.12);
 }
 
-.visual-swiper-hero {
+.visual-hero-shell {
+  position: relative;
   height: 430rpx;
   margin-top: 6rpx;
   border-radius: 30rpx;
+  overflow: hidden;
+  box-shadow: 0 16rpx 32rpx rgba(31, 98, 167, 0.12);
+}
+
+.visual-swiper-hero {
+  height: 430rpx;
+  margin: 0;
+  border-radius: 30rpx;
+  box-shadow: none;
 }
 
 .visual-swiper-hero .visual-slide {
@@ -322,19 +332,23 @@ button::after {
 .visual-mask {
   position: absolute;
   inset: 0;
+  z-index: 2;
   background:
     linear-gradient(90deg, rgba(8, 46, 90, 0.86), rgba(18, 82, 146, 0.46) 58%, rgba(8, 46, 90, 0.24)),
     linear-gradient(180deg, rgba(8, 46, 90, 0.18), rgba(8, 46, 90, 0.52));
+  pointer-events: none;
 }
 
 .visual-copy {
   position: absolute;
+  z-index: 3;
   left: 30rpx;
   right: 30rpx;
   bottom: 34rpx;
   display: flex;
   flex-direction: column;
   gap: 10rpx;
+  pointer-events: none;
 }
 
 .visual-badge {
