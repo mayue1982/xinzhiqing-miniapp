@@ -51,6 +51,7 @@
       <view class="featured-route-title">{{featuredRoute.title}}</view>
       <view class="featured-route-desc">{{featuredRoute.desc}}</view>
       <view class="featured-route-text">天山草原、文化游学与身心成长体验。</view>
+      <view class="featured-route-note">8月班期 · 小团深度出行 · 自然场域与文化体验结合</view>
       <view class="featured-route-foot">
         <text>{{featuredRoute.meta}}</text>
         <text>查看详情</text>

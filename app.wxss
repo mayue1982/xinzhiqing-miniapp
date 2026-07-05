@@ -295,22 +295,22 @@ button::after {
 
 .visual-hero-shell {
   position: relative;
-  height: 430rpx;
+  height: 400rpx;
   margin-top: 6rpx;
   border-radius: 30rpx;
   overflow: hidden;
-  box-shadow: 0 16rpx 32rpx rgba(31, 98, 167, 0.12);
+  box-shadow: 0 14rpx 30rpx rgba(0, 103, 169, 0.10);
 }
 
 .visual-swiper-hero {
-  height: 430rpx;
+  height: 400rpx;
   margin: 0;
   border-radius: 30rpx;
   box-shadow: none;
 }
 
 .visual-swiper-hero .visual-slide {
-  height: 430rpx;
+  height: 400rpx;
   border-radius: 30rpx;
 }
 
@@ -334,8 +334,8 @@ button::after {
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(90deg, rgba(8, 46, 90, 0.86), rgba(18, 82, 146, 0.46) 58%, rgba(8, 46, 90, 0.24)),
-    linear-gradient(180deg, rgba(8, 46, 90, 0.18), rgba(8, 46, 90, 0.52));
+    linear-gradient(90deg, rgba(0, 101, 169, 0.68), rgba(0, 113, 184, 0.42) 58%, rgba(0, 101, 169, 0.18)),
+    linear-gradient(180deg, rgba(0, 101, 169, 0.08), rgba(0, 101, 169, 0.30));
   pointer-events: none;
 }
 
@@ -366,18 +366,18 @@ button::after {
   color: #ffffff;
   width: 560rpx;
   font-family: 'Times New Roman', serif;
-  font-size: 48rpx;
+  font-size: 46rpx;
   line-height: 1.04;
   font-style: italic;
   font-weight: 700;
-  text-shadow: 0 4rpx 12rpx rgba(0, 32, 70, 0.28);
+  text-shadow: 0 4rpx 12rpx rgba(0, 63, 112, 0.22);
 }
 
 .visual-title-zh {
   color: #edf7ff;
   font-size: 28rpx;
   letter-spacing: 3rpx;
-  text-shadow: 0 4rpx 12rpx rgba(0, 32, 70, 0.24);
+  text-shadow: 0 4rpx 12rpx rgba(0, 63, 112, 0.20);
 }
 
 .visual-desc {
@@ -405,8 +405,8 @@ button::after {
   grid-template-columns: 72rpx 1fr 128rpx;
   align-items: center;
   gap: 12rpx;
-  min-height: 112rpx;
-  margin: 22rpx 0 24rpx;
+  min-height: 104rpx;
+  margin: 16rpx 0 14rpx;
   padding: 16rpx 18rpx;
   border-radius: 999rpx;
   background: rgba(255, 255, 255, 0.96);
@@ -464,11 +464,12 @@ button::after {
 
 .quick-grid-illustrated {
   grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 20rpx;
+  margin-bottom: 18rpx;
 }
 
 .quick-grid-illustrated .quick-card {
-  min-height: 178rpx;
+  min-height: 154rpx;
+  padding: 14rpx 8rpx 12rpx;
   border-radius: 26rpx;
   background: rgba(255, 255, 255, 0.96);
 }
@@ -477,7 +478,13 @@ button::after {
   position: relative;
   width: 92rpx;
   height: 78rpx;
-  margin: 0 auto 12rpx;
+  margin: -4rpx auto 4rpx;
+  transform: scale(0.84);
+  transform-origin: center center;
+}
+
+.quick-grid-illustrated .quick-label {
+  font-size: 24rpx;
 }
 
 .quick-shape {
@@ -600,7 +607,7 @@ button::after {
 .featured-route {
   position: relative;
   overflow: hidden;
-  margin: 28rpx 0 24rpx;
+  margin: 18rpx 0 34rpx;
   border-radius: 26rpx;
   background: #ffffff;
   border: 2rpx solid rgba(75, 120, 170, 0.12);
@@ -611,8 +618,8 @@ button::after {
   display: grid;
   grid-template-columns: 1fr 250rpx;
   gap: 22rpx;
-  min-height: 310rpx;
-  padding: 24rpx;
+  min-height: 372rpx;
+  padding: 26rpx;
 }
 
 .featured-route-image {
@@ -676,6 +683,13 @@ button::after {
   line-height: 1.55;
 }
 
+.featured-route-note {
+  margin-top: 12rpx;
+  color: #90a0b2;
+  font-size: 21rpx;
+  line-height: 1.45;
+}
+
 .featured-route-foot {
   display: flex;
   justify-content: space-between;
@@ -690,7 +704,8 @@ button::after {
 
 .featured-route-square {
   width: 250rpx;
-  height: 250rpx;
+  height: 290rpx;
+  align-self: center;
   display: block;
   border-radius: 18rpx;
   background: #eef6fd;
