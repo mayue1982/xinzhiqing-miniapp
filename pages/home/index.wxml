@@ -19,8 +19,7 @@
     </swiper>
     <view class="visual-mask"></view>
     <view class="visual-copy">
-      <view class="visual-title-en">xinzhiqing
-cultural tourism</view>
+      <image class="visual-title-art" src="/assets/images/hero-title-art.png" mode="widthFix"></image>
       <view class="visual-title-zh">心之清文旅，探索世界文明</view>
       <view class="visual-desc-en">exploring the depth of world civilizations with humanistic heart</view>
     </view>
@@ -51,7 +50,6 @@ cultural tourism</view>
       <text class="featured-route-tag">{{featuredRoute.tag}}</text>
       <view class="featured-route-title">{{featuredRoute.title}}</view>
       <view class="featured-route-desc">{{featuredRoute.desc}}</view>
-      <view class="featured-route-text">天山草原、文化游学与身心成长体验。</view>
       <view class="featured-route-note">8月班期 · 小团深度出行 · 自然场域与文化体验结合</view>
       <view class="featured-route-foot">
         <text>{{featuredRoute.meta}}</text>

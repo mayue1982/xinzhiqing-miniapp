@@ -334,8 +334,8 @@ button::after {
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(90deg, rgba(0, 101, 169, 0.68), rgba(0, 113, 184, 0.42) 58%, rgba(0, 101, 169, 0.18)),
-    linear-gradient(180deg, rgba(0, 101, 169, 0.08), rgba(0, 101, 169, 0.30));
+    linear-gradient(90deg, rgba(0, 101, 169, 0.54), rgba(0, 113, 184, 0.30) 58%, rgba(0, 101, 169, 0.10)),
+    linear-gradient(180deg, rgba(0, 101, 169, 0.04), rgba(0, 101, 169, 0.20));
   pointer-events: none;
 }
 
@@ -362,16 +362,10 @@ button::after {
   text-transform: uppercase;
 }
 
-.visual-title-en {
-  color: #ffffff;
-  width: 580rpx;
-  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 54rpx;
-  line-height: 1.08;
-  font-weight: 800;
-  white-space: pre-line;
-  letter-spacing: 1rpx;
-  text-shadow: 0 4rpx 12rpx rgba(0, 63, 112, 0.22);
+.visual-title-art {
+  width: 570rpx;
+  height: auto;
+  display: block;
 }
 
 .visual-title-zh {

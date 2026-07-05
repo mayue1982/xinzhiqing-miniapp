@@ -4,7 +4,11 @@
     "ignore": [
       {
         "type": "glob",
-        "value": "assets/images/*.png"
+        "value": "assets/images/carousel-*.png"
+      },
+      {
+        "type": "glob",
+        "value": "assets/images/route-*.png"
       }
     ],
     "include": []
