@@ -1,4 +1,5 @@
 const api = require('../../services/api')
+const share = require('../../services/share')
 
 Page({
   data: {
@@ -79,5 +80,11 @@ Page({
   },
   openGrowth() {
     wx.switchTab({ url: '/pages/growth/index' })
+  },
+  onShareAppMessage() {
+    return share.createShareConfig()
+  },
+  onShareTimeline() {
+    return share.createShareConfig()
   }
 })

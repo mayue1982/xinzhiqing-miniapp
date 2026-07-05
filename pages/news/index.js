@@ -1,4 +1,5 @@
 const api = require('../../services/api')
+const share = require('../../services/share')
 
 Page({
   data: {
@@ -38,5 +39,17 @@ Page({
   openArticle(e) {
     const { id } = e.currentTarget.dataset
     wx.navigateTo({ url: `/pages/news-detail/index?id=${id}` })
+  },
+  onShareAppMessage() {
+    return share.createShareConfig({
+      title: '心之清文旅｜疗愈、自然与文明故事',
+      path: '/pages/news/index'
+    })
+  },
+  onShareTimeline() {
+    return share.createShareConfig({
+      title: '心之清文旅｜成长资讯',
+      path: '/pages/news/index'
+    })
   }
 })

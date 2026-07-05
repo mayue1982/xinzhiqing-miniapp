@@ -1,4 +1,5 @@
 const api = require('../../services/api')
+const share = require('../../services/share')
 
 Page({
   data: {
@@ -55,5 +56,11 @@ Page({
   },
   openRecentRequest() {
     wx.navigateTo({ url: '/pages/request-list/index' })
+  },
+  onShareAppMessage() {
+    return share.createShareConfig()
+  },
+  onShareTimeline() {
+    return share.createShareConfig()
   }
 })

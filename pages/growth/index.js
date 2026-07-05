@@ -1,4 +1,5 @@
 const api = require('../../services/api')
+const share = require('../../services/share')
 
 const DRAFT_KEY = 'growth_request_draft'
 const LAST_REQUEST_KEY = 'latest_growth_request'
@@ -90,5 +91,17 @@ Page({
       this.setData({ submitting: false })
       wx.showToast({ title: '提交失败，请稍后重试', icon: 'none' })
     }
+  },
+  onShareAppMessage() {
+    return share.createShareConfig({
+      title: '心之清文旅｜定制你的成长旅程',
+      path: '/pages/growth/index'
+    })
+  },
+  onShareTimeline() {
+    return share.createShareConfig({
+      title: '心之清文旅｜成长定制',
+      path: '/pages/growth/index'
+    })
   }
 })
