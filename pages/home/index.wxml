@@ -59,6 +59,20 @@
     <image class="featured-route-square" src="{{featuredRoute.image}}" mode="aspectFill"></image>
   </view>
 
+  <view class="home-insight-panel">
+    <view class="home-insight-head">
+      <text class="home-insight-kicker">EDITORIAL NOTES</text>
+      <text class="home-insight-title">旅行不止抵达，也是一种内在整理</text>
+    </view>
+    <view class="home-insight-grid">
+      <view wx:for="{{insightItems}}" wx:key="title" class="home-insight-item">
+        <text class="home-insight-num">{{item.label}}</text>
+        <view class="home-insight-name">{{item.title}}</view>
+        <view class="home-insight-copy">{{item.copy}}</view>
+      </view>
+    </view>
+  </view>
+
   <view class="section-head">
     <text class="section-head-title">精选路线</text>
     <text class="section-head-subtitle">FEATURED</text>

@@ -2,7 +2,11 @@ const api = require('../../services/api')
 
 Page({
   data: {
-    chips: ['成长', '疗愈', '自然', '故事'],
+    chips: [
+      { title: '疗愈', articleId: 'article-healing' },
+      { title: '自然', articleId: 'article-nature' },
+      { title: '故事', articleId: 'article-story' }
+    ],
     articles: []
   },
   onShow() {
@@ -13,6 +17,11 @@ Page({
   async loadArticles() {
     const res = await api.getArticles()
     this.setData({ articles: res.data || [] })
+  },
+  openChip(e) {
+    const { id } = e.currentTarget.dataset
+    if (!id) return
+    wx.navigateTo({ url: `/pages/news-detail/index?id=${id}` })
   },
   openArticle(e) {
     const { id } = e.currentTarget.dataset

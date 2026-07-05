@@ -29,6 +29,11 @@ Page({
     ],
     quickItems: [],
     levels: [],
+    insightItems: [
+      { label: '01', title: '疗愈', copy: '从身体感受出发，把旅行变成恢复秩序的过程。' },
+      { label: '02', title: '自然', copy: '以山川、草原与星空作为场域，重新打开感知。' },
+      { label: '03', title: '故事', copy: '每一段路线都保留文化脉络、人物记忆与地方精神。' }
+    ],
     routes: []
   },
   onShow() {

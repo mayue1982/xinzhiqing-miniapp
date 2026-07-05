@@ -11,6 +11,7 @@
   </view>
 
   <view class="page-overview glass-card" wx:if="{{article}}">
+    <image wx:if="{{article.image}}" class="article-detail-image" src="{{article.image}}" mode="aspectFill"></image>
     <text class="overview-kicker">Editorial Story</text>
     <view class="overview-title">{{article.title}}</view>
     <view class="overview-copy">{{article.desc}}</view>

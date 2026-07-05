@@ -707,6 +707,69 @@ button::after {
   background: #eef6fd;
 }
 
+.home-insight-panel {
+  margin: 4rpx 0 30rpx;
+  padding: 26rpx;
+  border-radius: 26rpx;
+  border: 2rpx solid rgba(20, 94, 168, 0.10);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(241, 247, 253, 0.94));
+  box-shadow: 0 14rpx 30rpx rgba(31, 98, 167, 0.07);
+}
+
+.home-insight-head {
+  margin-bottom: 20rpx;
+}
+
+.home-insight-kicker {
+  display: block;
+  color: #8aa0b6;
+  font-size: 18rpx;
+  letter-spacing: 4rpx;
+}
+
+.home-insight-title {
+  display: block;
+  margin-top: 8rpx;
+  color: #13263f;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.home-insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rpx;
+}
+
+.home-insight-item {
+  min-height: 168rpx;
+  padding: 16rpx 14rpx;
+  border-radius: 18rpx;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(20, 94, 168, 0.08);
+}
+
+.home-insight-num {
+  color: #d6a92a;
+  font-size: 18rpx;
+  font-weight: 800;
+  letter-spacing: 2rpx;
+}
+
+.home-insight-name {
+  margin-top: 8rpx;
+  color: #145ea8;
+  font-size: 26rpx;
+  font-weight: 800;
+}
+
+.home-insight-copy {
+  margin-top: 8rpx;
+  color: #70849a;
+  font-size: 21rpx;
+  line-height: 1.45;
+}
+
 .brand-manifesto {
   margin-top: 28rpx;
   margin-bottom: 22rpx;
@@ -859,6 +922,30 @@ button::after {
   display: grid;
   grid-template-columns: 84rpx 1fr;
   gap: 12rpx;
+}
+
+.article-list-card {
+  grid-template-columns: 150rpx 1fr;
+  gap: 18rpx;
+  align-items: center;
+  padding: 14rpx;
+}
+
+.article-thumb-image {
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+  border-radius: 16rpx;
+  background: #eef6fd;
+}
+
+.article-detail-image {
+  width: 100%;
+  height: 300rpx;
+  display: block;
+  margin-bottom: 18rpx;
+  border-radius: 18rpx;
+  background: #eef6fd;
 }
 
 .thumb {
