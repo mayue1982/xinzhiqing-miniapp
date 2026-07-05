@@ -1,6 +1,7 @@
 const mock = require('../mock/data')
 
 const BASE_URL = 'http://127.0.0.1:3001'
+const USE_REMOTE_API = false
 
 function request(path, method, data) {
   return new Promise((resolve, reject) => {
@@ -30,6 +31,9 @@ function fallback(data) {
 }
 
 async function safeGet(path, fallbackData) {
+  if (!USE_REMOTE_API) {
+    return fallback(fallbackData)
+  }
   try {
     return await request(path)
   } catch (error) {
@@ -38,6 +42,12 @@ async function safeGet(path, fallbackData) {
 }
 
 async function safePost(path, body, fallbackBuilder) {
+  if (!USE_REMOTE_API) {
+    return fallback({
+      ...fallbackBuilder(body),
+      createdAt: new Date().toISOString()
+    })
+  }
   try {
     return await request(path, 'POST', body)
   } catch (error) {
