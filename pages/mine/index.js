@@ -1,6 +1,9 @@
 const api = require('../../services/api')
 const share = require('../../services/share')
 
+let adminTapCount = 0
+let adminTapTimer = null
+
 Page({
   data: {
     profile: {
@@ -50,6 +53,20 @@ Page({
     if (url) {
       wx.navigateTo({ url })
     }
+  },
+  handleAdminEntryTap() {
+    adminTapCount += 1
+    if (adminTapTimer) clearTimeout(adminTapTimer)
+
+    if (adminTapCount >= 5) {
+      adminTapCount = 0
+      wx.navigateTo({ url: '/pages/admin/index' })
+      return
+    }
+
+    adminTapTimer = setTimeout(() => {
+      adminTapCount = 0
+    }, 1800)
   },
   openRecentOrder() {
     wx.navigateTo({ url: '/pages/order-detail/index' })

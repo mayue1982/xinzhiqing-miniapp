@@ -1,4 +1,5 @@
 const mock = require('../mock/data')
+const { CLOUD_ENV_ID } = require('./cloud-config')
 
 const REQUESTS_KEY = 'xinzhiqing_requests'
 const ORDERS_KEY = 'xinzhiqing_orders'
@@ -20,6 +21,21 @@ function prependRecord(key, record) {
   const nextList = [record, ...readList(key)]
   writeList(key, nextList)
   return nextList
+}
+
+function canUseCloud() {
+  return Boolean(CLOUD_ENV_ID && wx.cloud)
+}
+
+function getDb() {
+  return wx.cloud.database({ env: CLOUD_ENV_ID })
+}
+
+function normalizeRequest(item) {
+  return {
+    ...item,
+    id: item.id || item._id
+  }
 }
 
 const bootstrapData = {
@@ -94,8 +110,9 @@ function getArticle(id) {
   return fallback(mock.articles.find(item => item.id === id) || mock.articles[0])
 }
 
-function getMine() {
-  const requests = readList(REQUESTS_KEY)
+async function getMine() {
+  const requestsRes = await getRequests()
+  const requests = requestsRes.data || []
   const orders = readList(ORDERS_KEY)
   return fallback({
     profile: bootstrapData.profile,
@@ -116,7 +133,15 @@ function getOrder(id) {
   return fallback((id && orders.find(item => item.id === id)) || orders[0] || mock.order)
 }
 
-function getRequests() {
+async function getRequests() {
+  if (canUseCloud()) {
+    try {
+      const res = await getDb().collection('requests').orderBy('createdAt', 'desc').get()
+      return fallback((res.data || []).map(normalizeRequest))
+    } catch (error) {
+      console.warn('[cloud] getRequests fallback:', error)
+    }
+  }
   return fallback(readList(REQUESTS_KEY))
 }
 
@@ -132,10 +157,22 @@ function getContact() {
   return fallback(bootstrapData.contact)
 }
 
-function createRequest(payload) {
+async function notifyRequestByEmail(request) {
+  if (!canUseCloud()) return
+  try {
+    await wx.cloud.callFunction({
+      name: 'sendRequestEmail',
+      data: { request }
+    })
+  } catch (error) {
+    console.warn('[cloud] sendRequestEmail skipped:', error)
+  }
+}
+
+async function createRequest(payload) {
   const now = new Date().toISOString()
   const request = {
-    id: `REQ-LOCAL-${Date.now()}`,
+    id: `REQ-${Date.now()}`,
     type: payload.type || '成长定制',
     city: payload.city || '',
     destination: payload.destination || '',
@@ -145,8 +182,24 @@ function createRequest(payload) {
     serviceType: payload.serviceType || '',
     note: payload.note || '',
     status: '已提交，待顾问跟进',
-    createdAt: now
+    createdAt: now,
+    source: 'miniapp'
   }
+
+  if (canUseCloud()) {
+    try {
+      const res = await getDb().collection('requests').add({ data: request })
+      const savedRequest = {
+        ...request,
+        _id: res._id
+      }
+      await notifyRequestByEmail(savedRequest)
+      return fallback(savedRequest)
+    } catch (error) {
+      console.warn('[cloud] createRequest fallback:', error)
+    }
+  }
+
   prependRecord(REQUESTS_KEY, request)
   return fallback(request)
 }

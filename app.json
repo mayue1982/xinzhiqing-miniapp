@@ -9,6 +9,7 @@
     "pages/news-detail/index",
     "pages/order-detail/index",
     "pages/request-list/index",
+    "pages/admin/index",
     "pages/consult-record/index",
     "pages/favorites/index",
     "pages/contact/index"

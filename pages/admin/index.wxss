@@ -1,0 +1,11 @@
+@import "../../app.wxss";
+
+.admin-actions {
+  display: flex;
+  gap: 14rpx;
+  margin-top: 18rpx;
+}
+
+.admin-request-card {
+  margin-bottom: 16rpx;
+}

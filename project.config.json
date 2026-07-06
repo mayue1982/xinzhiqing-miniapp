@@ -51,8 +51,9 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
+  "cloudfunctionRoot": "cloudfunctions/",
   "libVersion": "3.7.10",
-  "appid": "wxe63883ee9fb3f85f",
+  "appid": "wx7a9fae74aa32c0f3",
   "projectname": "xinzhiqing-miniapp",
   "simulatorPluginLibVersion": {},
   "editorSetting": {}

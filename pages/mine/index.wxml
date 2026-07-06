@@ -9,7 +9,7 @@
     </view>
   </view>
 
-  <view class="profile-card">
+  <view class="profile-card" bindtap="handleAdminEntryTap">
     <view class="profile-row">
       <view class="avatar">{{profile.avatar}}</view>
       <view>

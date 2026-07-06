@@ -1,0 +1,44 @@
+<view class="screen-page admin-page">
+  <view class="custom-nav with-back">
+    <button class="back-btn" bindtap="goBack">‹</button>
+    <view class="brand-wrap">
+      <view class="brand-dot">管</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">管理入口</text>
+        <text class="brand-stack-subtitle">REQUEST ADMIN</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-overview glass-card">
+    <text class="overview-kicker">Hidden Console</text>
+    <view class="overview-title">报名需求列表</view>
+    <view class="overview-copy">新提交的成长定制需求会先沉淀到这里，同时尝试发送邮件到 {{adminEmail}}。</view>
+    <view class="admin-actions">
+      <button class="primary-btn" loading="{{loading}}" bindtap="loadRequests">刷新</button>
+      <button class="outline-btn" bindtap="copyEmail">复制邮箱</button>
+    </view>
+  </view>
+
+  <view wx:if="{{requests.length}}">
+    <view wx:for="{{requests}}" wx:key="id" class="timeline-card admin-request-card">
+      <view class="section-head" style="margin-top:0;">
+        <text class="timeline-title">{{item.serviceType || item.type}}</text>
+        <text class="status-pill">{{item.status}}</text>
+      </view>
+      <view class="timeline-copy">出发：{{item.city || '未填写'}}</view>
+      <view class="timeline-copy">方向：{{item.destination || '未填写'}} / {{item.groupSize || '未填写'}} / {{item.timeWindow || '未填写'}}</view>
+      <view class="timeline-copy">预算：{{item.budget || '未填写'}}</view>
+      <view class="timeline-copy">备注：{{item.note || '无'}}</view>
+      <view class="timeline-foot">
+        <text class="timeline-meta">{{item.id}}</text>
+        <text class="timeline-meta">{{item.displayTime}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty-card" wx:else>
+    <view class="empty-title">暂无报名需求</view>
+    <view class="empty-copy">用户从成长定制页提交后，会自动出现在这里。</view>
+  </view>
+</view>
