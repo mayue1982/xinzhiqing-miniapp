@@ -1,61 +1,25 @@
 const mock = require('../mock/data')
 
-const BASE_URL = 'http://127.0.0.1:3001'
-const USE_REMOTE_API = false
-
-function request(path, method, data) {
-  return new Promise((resolve, reject) => {
-    wx.request({
-      url: `${BASE_URL}${path}`,
-      method: method || 'GET',
-      data,
-      header: {
-        'content-type': 'application/json'
-      },
-      success(res) {
-        if (res.statusCode >= 200 && res.statusCode < 300) {
-          resolve(res.data)
-          return
-        }
-        reject(new Error((res.data && res.data.message) || `HTTP ${res.statusCode}`))
-      },
-      fail(err) {
-        reject(err)
-      }
-    })
-  })
-}
+const REQUESTS_KEY = 'xinzhiqing_requests'
+const ORDERS_KEY = 'xinzhiqing_orders'
 
 function fallback(data) {
   return Promise.resolve({ ok: true, data })
 }
 
-async function safeGet(path, fallbackData) {
-  if (!USE_REMOTE_API) {
-    return fallback(fallbackData)
-  }
-  try {
-    return await request(path)
-  } catch (error) {
-    return fallback(fallbackData)
-  }
+function readList(key) {
+  const value = wx.getStorageSync(key)
+  return Array.isArray(value) ? value : []
 }
 
-async function safePost(path, body, fallbackBuilder) {
-  if (!USE_REMOTE_API) {
-    return fallback({
-      ...fallbackBuilder(body),
-      createdAt: new Date().toISOString()
-    })
-  }
-  try {
-    return await request(path, 'POST', body)
-  } catch (error) {
-    return fallback({
-      ...fallbackBuilder(body),
-      createdAt: new Date().toISOString()
-    })
-  }
+function writeList(key, list) {
+  wx.setStorageSync(key, list)
+}
+
+function prependRecord(key, record) {
+  const nextList = [record, ...readList(key)]
+  writeList(key, nextList)
+  return nextList
 }
 
 const bootstrapData = {
@@ -115,68 +79,76 @@ const bootstrapData = {
 }
 
 function getBootstrap() {
-  return safeGet('/api/bootstrap', bootstrapData)
+  return fallback(bootstrapData)
 }
 
 function getRoute(id) {
-  return safeGet(`/api/routes/${encodeURIComponent(id)}`, mock.routes.find(item => item.id === id) || mock.routes[0])
+  return fallback(mock.routes.find(item => item.id === id) || mock.routes[0])
 }
 
 function getArticles() {
-  return safeGet('/api/articles', mock.articles)
+  return fallback(mock.articles)
 }
 
 function getArticle(id) {
-  return safeGet(`/api/articles/${encodeURIComponent(id)}`, mock.articles.find(item => item.id === id) || mock.articles[0])
+  return fallback(mock.articles.find(item => item.id === id) || mock.articles[0])
 }
 
 function getMine() {
-  return safeGet('/api/mine', {
+  const requests = readList(REQUESTS_KEY)
+  const orders = readList(ORDERS_KEY)
+  return fallback({
     profile: bootstrapData.profile,
-    stats: bootstrapData.stats,
+    stats: {
+      orders: orders.length,
+      requests: requests.length,
+      saved: bootstrapData.stats.saved
+    },
     menus: bootstrapData.menus,
-    recentOrders: bootstrapData.recentOrders,
-    recentRequests: bootstrapData.recentRequests,
+    recentOrders: orders.length ? orders.slice(0, 1) : bootstrapData.recentOrders,
+    recentRequests: requests.length ? requests.slice(0, 1) : bootstrapData.recentRequests,
     contact: bootstrapData.contact
   })
 }
 
 function getOrder(id) {
-  if (id) {
-    return safeGet(`/api/orders/${encodeURIComponent(id)}`, mock.order)
-  }
-  return safeGet('/api/orders/latest', mock.order)
+  const orders = readList(ORDERS_KEY)
+  return fallback((id && orders.find(item => item.id === id)) || orders[0] || mock.order)
 }
 
 function getRequests() {
-  return safeGet('/api/requests', [])
+  return fallback(readList(REQUESTS_KEY))
 }
 
 function getConsultations() {
-  return safeGet('/api/consultations', [])
+  return fallback([])
 }
 
 function getFavorites() {
-  return safeGet('/api/favorites', [])
+  return fallback([])
 }
 
 function getContact() {
-  return safeGet('/api/contact', bootstrapData.contact)
+  return fallback(bootstrapData.contact)
 }
 
 function createRequest(payload) {
-  return safePost('/api/requests', payload, body => ({
+  const now = new Date().toISOString()
+  const request = {
     id: `REQ-LOCAL-${Date.now()}`,
-    type: body.type || '成长定制',
-    city: body.city || '',
-    destination: body.destination || '',
-    groupSize: body.groupSize || '',
-    timeWindow: body.timeWindow || '',
-    budget: body.budget || '',
-    serviceType: body.serviceType || '',
-    note: body.note || '',
-    status: '已提交，待顾问跟进'
-  }))
+    type: payload.type || '成长定制',
+    city: payload.city || '',
+    destination: payload.destination || '',
+    groupSize: payload.groupSize || '',
+    timeWindow: payload.timeWindow || '',
+    budget: payload.budget || '',
+    serviceType: payload.serviceType || '',
+    note: payload.note || '',
+    status: '已提交，待顾问跟进',
+    createdAt: now
+  }
+  prependRecord(REQUESTS_KEY, request)
+  return fallback(request)
 }
 
 module.exports = {
