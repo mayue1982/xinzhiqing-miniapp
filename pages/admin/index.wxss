@@ -2,8 +2,13 @@
 
 .admin-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 14rpx;
   margin-top: 18rpx;
+}
+
+.admin-password-field {
+  margin-top: 12rpx;
 }
 
 .admin-request-card {
