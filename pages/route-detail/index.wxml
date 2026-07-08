@@ -49,10 +49,6 @@
         <view class="xj-quote">{{route.longDesc}}</view>
         <view class="xj-copy">{{route.themeIntro}}</view>
       </view>
-      <view class="xj-scenic-panel">
-        <image class="xj-scenic-image" src="/assets/images/route-culture.jpg" mode="aspectFill"></image>
-        <view class="xj-scenic-caption">山河为课堂，文明伴同行</view>
-      </view>
       <view class="xj-invite-lines">
         <view wx:for="{{route.invitation}}" wx:key="*this" class="xj-copy">{{item}}</view>
       </view>
