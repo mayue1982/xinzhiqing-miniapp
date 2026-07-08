@@ -10,6 +10,78 @@
     </view>
   </view>
 
+  <view class="xinjiang-detail" wx:if="{{route && route.id === 'route-xj-aug'}}">
+    <view class="xj-hero">
+      <image class="xj-hero-image" src="{{route.image}}" mode="aspectFill" />
+      <view class="xj-hero-mask"></view>
+      <view class="xj-hero-content">
+        <text class="xj-kicker">心爱自然 · 新疆生命之旅</text>
+        <view class="xj-title">{{route.title}}</view>
+        <view class="xj-subtitle">{{route.desc}}</view>
+        <view class="xj-meta-row">
+          <text>{{route.dateRange}}</text>
+          <text>{{route.duration}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="xj-card xj-invite-card">
+      <view class="xj-section-kicker">INVITATION</view>
+      <view class="xj-section-title">邀请函</view>
+      <view class="xj-quote">{{route.longDesc}}</view>
+      <view class="xj-copy">{{route.themeIntro}}</view>
+      <view wx:for="{{route.invitation}}" wx:key="*this" class="xj-copy">{{item}}</view>
+      <view class="xj-slogan">{{route.slogan}}</view>
+    </view>
+
+    <view class="xj-section-head">
+      <text class="section-head-title">四大核心主题</text>
+      <text class="section-head-subtitle">NATURE · CULTURE</text>
+    </view>
+    <view class="xj-theme-grid">
+      <view wx:for="{{route.coreThemes}}" wx:key="title" class="xj-theme-card">
+        <view class="xj-theme-title">{{item.title}}</view>
+        <view class="xj-theme-text">{{item.text}}</view>
+      </view>
+    </view>
+
+    <view class="xj-section-head">
+      <text class="section-head-title">行程与活动流程</text>
+      <text class="section-head-subtitle">2026 AUGUST</text>
+    </view>
+    <view wx:for="{{route.stages}}" wx:key="title" class="xj-stage-card xj-stage-{{item.color}}">
+      <view class="xj-stage-side">
+        <view class="xj-stage-index">{{index + 1}}</view>
+        <view class="xj-stage-title">{{item.title}}</view>
+        <view class="xj-stage-subtitle">{{item.subtitle}}</view>
+      </view>
+      <view class="xj-stage-main">
+        <view wx:for="{{item.days}}" wx:for-item="day" wx:key="*this" class="xj-day-row">{{day}}</view>
+        <view class="xj-places">{{item.places}}</view>
+      </view>
+    </view>
+
+    <view class="xj-section-head">
+      <text class="section-head-title">出行须知</text>
+      <text class="section-head-subtitle">NOTICE</text>
+    </view>
+    <view class="xj-notice-grid">
+      <view wx:for="{{route.notices}}" wx:key="title" class="xj-notice-card">
+        <view class="xj-notice-title">{{item.title}}</view>
+        <view class="xj-notice-text">{{item.text}}</view>
+      </view>
+    </view>
+
+    <view class="xj-contact-card">
+      <view>
+        <view class="xj-contact-title">报名方式</view>
+        <view class="xj-contact-phone">电话：{{route.phone}}</view>
+      </view>
+      <button class="primary-btn" bindtap="startConsult">提交咨询</button>
+    </view>
+  </view>
+
+  <block wx:elif="{{route}}">
   <view class="page-overview glass-card" wx:if="{{route}}">
     <text class="overview-kicker">Featured Journey</text>
     <view class="overview-title">{{route.title}}</view>
@@ -46,4 +118,5 @@
     <button class="primary-btn" bindtap="startConsult">提交咨询</button>
     <button class="outline-btn" bindtap="goHome">返回首页</button>
   </view>
+  </block>
 </view>
