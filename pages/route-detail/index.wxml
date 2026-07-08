@@ -42,13 +42,15 @@
 
     <view class="xj-card xj-invite-card">
       <view class="xj-invite-main">
-        <view class="xj-section-kicker">INVITATION</view>
-        <view class="xj-section-title">邀请函</view>
+        <view class="xj-invite-heading">
+          <view class="xj-section-kicker">INVITATION</view>
+          <view class="xj-section-title">邀请函</view>
+        </view>
         <view class="xj-quote">{{route.longDesc}}</view>
         <view class="xj-copy">{{route.themeIntro}}</view>
       </view>
       <view class="xj-scenic-panel">
-        <image class="xj-scenic-image" src="{{route.image}}" mode="aspectFill"></image>
+        <image class="xj-scenic-image" src="/assets/images/route-culture.jpg" mode="aspectFill"></image>
         <view class="xj-scenic-caption">山河为课堂，文明伴同行</view>
       </view>
       <view class="xj-invite-lines">

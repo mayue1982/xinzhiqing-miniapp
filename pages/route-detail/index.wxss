@@ -150,6 +150,19 @@
   letter-spacing: 4rpx;
 }
 
+.xj-invite-heading {
+  text-align: center;
+}
+
+.xj-invite-heading::after {
+  content: '';
+  display: block;
+  width: 120rpx;
+  height: 2rpx;
+  margin: 18rpx auto 0;
+  background: linear-gradient(90deg, transparent, rgba(214, 169, 42, 0.86), transparent);
+}
+
 .xj-section-title {
   margin-top: 8rpx;
   color: #0d4f79;
