@@ -19,7 +19,7 @@
     </view>
     <view class="metric-grid">
       <view class="metric"><text class="metric-num">{{stats.orders}}</text><text class="metric-label">ORDERS</text></view>
-      <view class="metric"><text class="metric-num">{{stats.requests}}</text><text class="metric-label">REQUESTS</text></view>
+      <view class="metric"><text class="metric-num">{{stats.requests}}</text><text class="metric-label">NEEDS</text></view>
       <view class="metric"><text class="metric-num">{{stats.saved}}</text><text class="metric-label">SAVED</text></view>
     </view>
   </view>

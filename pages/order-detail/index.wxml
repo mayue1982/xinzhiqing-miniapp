@@ -10,10 +10,24 @@
     </view>
   </view>
 
-  <view class="page-overview glass-card" wx:if="{{order}}">
+  <view class="page-overview glass-card">
     <text class="overview-kicker">Order Snapshot</text>
-    <view class="overview-title">{{order.routeTitle}}</view>
-    <view class="overview-copy">当前处于顾问确认阶段，这个页面主要承接订单表达与后续进度查看。</view>
+    <view class="overview-title">我的报名订单</view>
+    <view class="overview-copy">这里记录已提交的路线报名。当前版本只做信息提交和顾问确认，暂不包含线上缴费。</view>
+  </view>
+
+  <view wx:if="{{orders.length && !order}}">
+    <view wx:for="{{orders}}" wx:key="id" class="timeline-card" data-id="{{item.id}}" bindtap="openOrder">
+      <view class="section-head" style="margin-top:0;">
+        <text class="timeline-title">{{item.routeTitle}}</text>
+        <text class="status-pill">{{item.status}}</text>
+      </view>
+      <view class="timeline-copy">{{item.name}} / {{item.phone}} / {{item.groupSize}}</view>
+      <view class="timeline-foot">
+        <text class="timeline-meta">{{item.id}}</text>
+        <text class="timeline-meta">{{item.displayTime}}</text>
+      </view>
+    </view>
   </view>
 
   <view class="profile-card" wx:if="{{order}}">
@@ -30,11 +44,21 @@
     <view class="menu-row"><text>订单编号</text><text class="menu-meta">{{order.id}}</text></view>
     <view class="menu-row"><text>路线名称</text><text class="menu-meta">{{order.routeTitle}}</text></view>
     <view class="menu-row"><text>当前状态</text><text class="menu-meta">{{order.status}}</text></view>
-    <view class="menu-row"><text>联系人</text><text class="menu-meta">{{order.contact}}</text></view>
+    <view class="menu-row"><text>联系人</text><text class="menu-meta">{{order.name}}</text></view>
+    <view class="menu-row"><text>联系电话</text><text class="menu-meta">{{order.phone}}</text></view>
+    <view class="menu-row"><text>报名人数</text><text class="menu-meta">{{order.groupSize}}</text></view>
   </view>
 
   <view class="soft-card" wx:if="{{order}}">
     <view class="soft-title">说明</view>
-    <view class="soft-copy">{{order.note}}</view>
+    <view class="soft-copy">{{order.note || '顾问将根据报名信息进一步确认席位、行程细节与后续安排。'}}</view>
+  </view>
+
+  <view class="empty-card" wx:if="{{!orders.length}}">
+    <view class="empty-title">还没有报名订单</view>
+    <view class="empty-copy">可以先从首页进入新疆心灵之旅或其他路线详情，点击“我要报名”。</view>
+    <view class="hero-actions">
+      <button class="primary-btn" bindtap="goHome">去首页看看</button>
+    </view>
   </view>
 </view>

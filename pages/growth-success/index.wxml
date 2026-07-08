@@ -32,7 +32,7 @@
 
   <view class="soft-card">
     <view class="soft-title">下一步</view>
-    <view class="soft-copy">建议保持微信与电话畅通，后续可在“我的需求”或“咨询记录”中持续查看进度。</view>
+    <view class="soft-copy">建议保持微信与电话畅通，后续可在“我的需求”或“顾问咨询”中持续查看进度。</view>
   </view>
 
   <view class="hero-actions" style="margin-top:18rpx;">

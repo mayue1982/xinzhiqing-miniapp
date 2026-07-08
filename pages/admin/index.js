@@ -10,6 +10,7 @@ Page({
   data: {
     loading: false,
     requests: [],
+    orders: [],
     adminEmail: ADMIN_EMAIL
   },
   onShow() {
@@ -18,12 +19,19 @@ Page({
   async loadRequests() {
     this.setData({ loading: true })
     try {
-      const res = await api.getRequests()
-      const requests = (res.data || []).map(item => ({
+      const [requestRes, orderRes] = await Promise.all([
+        api.getRequests(),
+        api.getOrders()
+      ])
+      const requests = (requestRes.data || []).map(item => ({
         ...item,
         displayTime: formatTime(item.createdAt)
       }))
-      this.setData({ requests, loading: false })
+      const orders = (orderRes.data || []).map(item => ({
+        ...item,
+        displayTime: formatTime(item.createdAt)
+      }))
+      this.setData({ requests, orders, loading: false })
     } catch (error) {
       this.setData({ loading: false })
       wx.showToast({ title: '读取失败', icon: 'none' })

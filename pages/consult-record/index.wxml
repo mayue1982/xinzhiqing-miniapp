@@ -4,16 +4,48 @@
     <view class="brand-wrap">
       <view class="brand-dot">咨</view>
       <view class="brand-stack">
-        <text class="brand-stack-title">咨询记录</text>
-        <text class="brand-stack-subtitle">CONSULTATION</text>
+        <text class="brand-stack-title">顾问咨询</text>
+        <text class="brand-stack-subtitle">ADVISOR</text>
       </view>
     </view>
   </view>
 
   <view class="page-overview glass-card">
-    <text class="overview-kicker">Consultation Flow</text>
-    <view class="overview-title">顾问跟进过程一目了然</view>
-    <view class="overview-copy">这里展示咨询从接收、匹配到方案整理的过程，让承接链路看起来更完整。</view>
+    <text class="overview-kicker">Advisor Bridge</text>
+    <view class="overview-title">咨询、报名与顾问承接放在一起</view>
+    <view class="overview-copy">第一阶段先用小程序客服与顾问跟进承接用户，报名和成长定制提交记录也会汇总在这里。</view>
+  </view>
+
+  <view class="advisor-card" wx:if="{{contact.advisor}}">
+    <view class="advisor-row">
+      <view class="advisor-avatar">{{contact.advisor.avatar}}</view>
+      <view>
+        <view class="card-title" style="color:#fff; margin-bottom:4rpx;">{{contact.advisor.name}}</view>
+        <view class="card-copy" style="color:rgba(255,255,255,.88);">{{contact.advisor.role}}</view>
+      </view>
+    </view>
+    <view class="metric-grid">
+      <view class="metric"><text class="metric-num">客服</text><text class="metric-label">咨询入口</text></view>
+      <view class="metric"><text class="metric-num">{{contact.advisor.hours}}</text><text class="metric-label">服务时段</text></view>
+      <view class="metric"><text class="metric-num">24H</text><text class="metric-label">跟进</text></view>
+    </view>
+  </view>
+
+  <view class="glass-card" wx:if="{{contact.advisor}}">
+    <view class="section-head" style="margin-top:0;">
+      <text class="section-head-title">联系顾问</text>
+      <text class="section-head-subtitle">SERVICE</text>
+    </view>
+    <view class="contact-actions">
+      <button class="primary-btn" open-type="contact">小程序客服</button>
+      <button class="outline-btn" bindtap="copyWechat">复制微信</button>
+      <button class="outline-btn" bindtap="copyPhone">复制电话</button>
+    </view>
+  </view>
+
+  <view class="section-head">
+    <text class="section-head-title">咨询记录</text>
+    <text class="section-head-subtitle">RECORDS</text>
   </view>
 
   <view wx:if="{{consultations.length}}">

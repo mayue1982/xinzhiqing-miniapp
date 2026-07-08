@@ -109,7 +109,12 @@
         <view class="xj-contact-title">报名方式</view>
         <view class="xj-contact-phone">电话：{{route.phone}}</view>
       </view>
-      <button class="primary-btn" bindtap="startConsult">提交咨询</button>
+      <button class="primary-btn" bindtap="startSignup">我要报名</button>
+    </view>
+
+    <view class="hero-actions" style="margin-top:18rpx;">
+      <button class="outline-btn" bindtap="toggleFavorite">{{isFavorite ? '取消收藏' : '收藏路线'}}</button>
+      <button class="outline-btn" bindtap="goHome">返回首页</button>
     </view>
   </view>
 
@@ -147,7 +152,8 @@
   </view>
 
   <view class="hero-actions" style="margin-top:18rpx;">
-    <button class="primary-btn" bindtap="startConsult">提交咨询</button>
+    <button class="primary-btn" bindtap="startSignup">我要报名</button>
+    <button class="outline-btn" bindtap="toggleFavorite">{{isFavorite ? '取消收藏' : '收藏路线'}}</button>
     <button class="outline-btn" bindtap="goHome">返回首页</button>
   </view>
   </block>

@@ -20,7 +20,7 @@ Page({
     recentOrder: null,
     recentRequest: null,
     contact: {
-      title: '联系顾问',
+      title: '顾问咨询',
       description: ''
     }
   },
@@ -45,9 +45,8 @@ Page({
     const pageMap = {
       我的订单: '/pages/order-detail/index',
       成长定制: '/pages/request-list/index',
-      咨询记录: '/pages/consult-record/index',
-      我的收藏: '/pages/favorites/index',
-      联系顾问: '/pages/contact/index'
+      顾问咨询: '/pages/consult-record/index',
+      我的收藏: '/pages/favorites/index'
     }
     const url = pageMap[title]
     if (url) {

@@ -22,6 +22,8 @@ function buildMailText(request) {
     '',
     `编号：${request.id || request._id || ''}`,
     `类型：${request.serviceType || request.type || ''}`,
+    `联系人：${request.contactName || request.name || ''}`,
+    `联系电话：${request.phone || ''}`,
     `出发城市：${request.city || ''}`,
     `目的地方向：${request.destination || ''}`,
     `人数：${request.groupSize || ''}`,

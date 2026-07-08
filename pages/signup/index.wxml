@@ -1,0 +1,38 @@
+<view class="screen-page">
+  <view class="custom-nav with-back">
+    <button class="back-btn" bindtap="goBack">‹</button>
+    <view class="brand-wrap">
+      <view class="brand-dot">报</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">我要报名</text>
+        <text class="brand-stack-subtitle">SIGN UP</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-overview glass-card" wx:if="{{route}}">
+    <text class="overview-kicker">Route Signup</text>
+    <view class="overview-title">{{route.title}}</view>
+    <view class="overview-copy">先提交基础报名信息，顾问确认席位与具体安排；当前版本暂不涉及线上缴费。</view>
+  </view>
+
+  <view class="form-card glass-card">
+    <view class="section-head" style="margin-top:0;">
+      <text class="section-head-title">报名信息</text>
+      <text class="section-head-subtitle">STEP 1</text>
+    </view>
+    <view class="field-row">
+      <input class="field" placeholder="姓名" value="{{form.name}}" data-field="name" bindinput="updateField" />
+      <input class="field" placeholder="联系电话" value="{{form.phone}}" data-field="phone" bindinput="updateField" />
+    </view>
+    <view class="field-row">
+      <input class="field" placeholder="出发城市" value="{{form.city}}" data-field="city" bindinput="updateField" />
+      <input class="field" placeholder="报名人数" value="{{form.groupSize}}" data-field="groupSize" bindinput="updateField" />
+    </view>
+    <input class="field" placeholder="意向时间，如 8月班期" value="{{form.timeWindow}}" data-field="timeWindow" bindinput="updateField" />
+    <textarea class="textarea" placeholder="补充说明：同行人、身体情况、想重点了解的内容等。" value="{{form.note}}" data-field="note" bindinput="updateField"></textarea>
+    <view class="hero-actions" style="margin-top:18rpx;">
+      <button class="primary-btn" loading="{{submitting}}" bindtap="submitSignup">提交报名</button>
+    </view>
+  </view>
+</view>
