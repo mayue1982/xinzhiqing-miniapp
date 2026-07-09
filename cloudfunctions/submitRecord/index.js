@@ -7,6 +7,7 @@ cloud.init({
 const ALLOWED_COLLECTIONS = ['orders', 'requests']
 
 exports.main = async event => {
+  const wxContext = cloud.getWXContext()
   const collection = event.collection
   const record = event.record || {}
 
@@ -21,6 +22,7 @@ exports.main = async event => {
   const res = await db.collection(collection).add({
     data: {
       ...record,
+      _openid: wxContext.OPENID,
       updatedAt: new Date().toISOString()
     }
   })

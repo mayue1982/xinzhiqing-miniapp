@@ -49,6 +49,16 @@ async function submitCloudRecord(collection, record) {
   }
 }
 
+async function getCloudMyRecords() {
+  const res = await wx.cloud.callFunction({
+    name: 'myRecords'
+  })
+  if (!res.result || !res.result.ok) {
+    throw new Error((res.result && res.result.reason) || 'MY_RECORDS_FAILED')
+  }
+  return res.result
+}
+
 function normalizeRequest(item) {
   return {
     ...item,
@@ -157,8 +167,11 @@ async function getMine() {
 async function getOrders() {
   if (canUseCloud()) {
     try {
-      const res = await getDb().collection('orders').orderBy('createdAt', 'desc').get()
-      return fallback((res.data || []).map(normalizeOrder))
+      const res = await getCloudMyRecords()
+      const cloudOrders = (res.orders || []).map(normalizeOrder)
+      const localOrders = readList(ORDERS_KEY)
+      const merged = mergeById(cloudOrders, localOrders)
+      return fallback(merged)
     } catch (error) {
       console.warn('[cloud] getOrders fallback:', error)
     }
@@ -175,8 +188,11 @@ async function getOrder(id) {
 async function getRequests() {
   if (canUseCloud()) {
     try {
-      const res = await getDb().collection('requests').orderBy('createdAt', 'desc').get()
-      return fallback((res.data || []).map(normalizeRequest))
+      const res = await getCloudMyRecords()
+      const cloudRequests = (res.requests || []).map(normalizeRequest)
+      const localRequests = readList(REQUESTS_KEY)
+      const merged = mergeById(cloudRequests, localRequests)
+      return fallback(merged)
     } catch (error) {
       console.warn('[cloud] getRequests fallback:', error)
     }
@@ -212,6 +228,17 @@ function getContact() {
   return fallback(bootstrapData.contact)
 }
 
+function mergeById(primary, secondary) {
+  const map = {}
+  return [...primary, ...secondary]
+    .filter(item => item && item.id)
+    .filter(item => {
+      if (map[item.id]) return false
+      map[item.id] = true
+      return true
+    })
+}
+
 async function notifyRequestByEmail(request) {
   if (!canUseCloud()) return
   try {
@@ -244,6 +271,7 @@ async function createRequest(payload) {
   if (canUseCloud()) {
     try {
       const savedRequest = await submitCloudRecord('requests', request)
+      prependRecord(REQUESTS_KEY, savedRequest)
       await notifyRequestByEmail(savedRequest)
       return fallback(savedRequest)
     } catch (error) {
@@ -275,6 +303,7 @@ async function createOrder(payload) {
   if (canUseCloud()) {
     try {
       const savedOrder = await submitCloudRecord('orders', order)
+      prependRecord(ORDERS_KEY, savedOrder)
       await notifyRequestByEmail({
         ...savedOrder,
         type: '路线报名',
