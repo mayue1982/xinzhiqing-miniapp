@@ -13,8 +13,8 @@
     <text class="hero-badge">Personal Request</text>
     <view class="hero-title-en">Tailor Your
 Growth Journey</view>
-    <view class="hero-title-zh">面 向 个 人 的 成 长 申 请</view>
-    <view class="hero-copy">围绕心灵培训旅游线路与主题游学，先完成需求采集，再由顾问协助匹配路线。</view>
+    <view class="hero-title-zh">面向个人的成长申请</view>
+    <view class="hero-copy">围绕心灵培训、旅游线路与主题游学，先完成需求采集，再由顾问协助匹配路线。</view>
     <view class="hero-copy-en">A guided request flow for training routes, study journeys, and tailored travel arrangements.</view>
   </view>
 
@@ -32,6 +32,10 @@ Growth Journey</view>
     <view class="section-head" style="margin-top:0;">
       <text class="section-head-title">需求采集</text>
       <text class="section-head-subtitle">STEP 1</text>
+    </view>
+    <view class="field-row">
+      <input class="field" placeholder="联系人姓名" value="{{form.name}}" data-field="name" bindinput="updateField" />
+      <input class="field" type="number" placeholder="联系电话" value="{{form.phone}}" data-field="phone" bindinput="updateField" />
     </view>
     <view class="field-row">
       <input class="field" placeholder="出发城市 / Departure" value="{{form.city}}" data-field="city" bindinput="updateField" />

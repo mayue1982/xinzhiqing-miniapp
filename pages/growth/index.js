@@ -7,12 +7,14 @@ const PREFILL_KEY = 'growth_request_prefill'
 
 function createEmptyForm(serviceType) {
   return {
+    name: '',
+    phone: '',
     city: '',
     destination: '',
     groupSize: '',
     timeWindow: '',
     budget: '',
-    serviceType: serviceType || '成长定制',
+    serviceType: serviceType || '培训',
     note: ''
   }
 }
@@ -71,8 +73,8 @@ Page({
   async submitRequest() {
     if (this.data.submitting) return
 
-    const { city, destination, groupSize, timeWindow, budget, serviceType, note } = this.data.form
-    if (!city || !destination || !groupSize || !timeWindow || !budget || !serviceType || !note) {
+    const { name, phone, city, destination, groupSize, timeWindow, budget, serviceType, note } = this.data.form
+    if (!name || !phone || !city || !destination || !groupSize || !timeWindow || !budget || !serviceType || !note) {
       wx.showToast({ title: '请先填写完整信息', icon: 'none' })
       return
     }
@@ -85,6 +87,8 @@ Page({
     try {
       const res = await api.createRequest({
         type: '成长定制',
+        name,
+        phone,
         city,
         destination,
         groupSize,
@@ -107,13 +111,13 @@ Page({
   },
   onShareAppMessage() {
     return share.createShareConfig({
-      title: '心之清文旅｜定制你的成长旅程',
+      title: '心之清文旅：定制你的成长旅程',
       path: '/pages/growth/index'
     })
   },
   onShareTimeline() {
     return share.createShareConfig({
-      title: '心之清文旅｜成长定制',
+      title: '心之清文旅：成长定制',
       path: '/pages/growth/index'
     })
   }

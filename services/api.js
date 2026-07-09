@@ -256,6 +256,8 @@ async function createRequest(payload) {
   const request = {
     id: `REQ-${Date.now()}`,
     type: payload.type || '成长定制',
+    name: payload.name || '',
+    phone: payload.phone || '',
     city: payload.city || '',
     destination: payload.destination || '',
     groupSize: payload.groupSize || '',
