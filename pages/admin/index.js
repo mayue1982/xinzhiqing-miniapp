@@ -1,7 +1,4 @@
-const api = require('../../services/api')
 const { ADMIN_EMAIL } = require('../../services/cloud-config')
-
-const ADMIN_SESSION_KEY = 'xinzhiqing_admin_authed'
 
 function formatTime(value) {
   if (!value) return ''
@@ -21,9 +18,7 @@ Page({
     }
   },
   onShow() {
-    const authed = wx.getStorageSync(ADMIN_SESSION_KEY) === true
-    this.setData({ authed })
-    if (authed) this.loadRequests()
+    if (this.data.authed) this.loadRequests()
   },
   updateLoginField(e) {
     const { field } = e.currentTarget.dataset
@@ -47,7 +42,6 @@ Page({
         data: { username, password }
       })
       if (res.result && res.result.ok) {
-        wx.setStorageSync(ADMIN_SESSION_KEY, true)
         this.setData({ authed: true, loading: false })
         wx.showToast({ title: '已进入后台', icon: 'success' })
         this.loadRequests()
@@ -62,7 +56,6 @@ Page({
     }
   },
   logoutAdmin() {
-    wx.removeStorageSync(ADMIN_SESSION_KEY)
     this.setData({
       authed: false,
       orders: [],
@@ -77,22 +70,30 @@ Page({
     if (!this.data.authed) return
     this.setData({ loading: true })
     try {
-      const [requestRes, orderRes] = await Promise.all([
-        api.getRequests(),
-        api.getOrders()
-      ])
-      const requests = (requestRes.data || []).map(item => ({
+      const res = await wx.cloud.callFunction({
+        name: 'adminList',
+        data: {
+          username: this.data.loginForm.username,
+          password: this.data.loginForm.password
+        }
+      })
+      if (!res.result || !res.result.ok) {
+        this.setData({ loading: false })
+        wx.showToast({ title: '后台列表未授权', icon: 'none' })
+        return
+      }
+      const requests = (res.result.requests || []).map(item => ({
         ...item,
         displayTime: formatTime(item.createdAt)
       }))
-      const orders = (orderRes.data || []).map(item => ({
+      const orders = (res.result.orders || []).map(item => ({
         ...item,
         displayTime: formatTime(item.createdAt)
       }))
       this.setData({ requests, orders, loading: false })
     } catch (error) {
       this.setData({ loading: false })
-      wx.showToast({ title: '读取失败', icon: 'none' })
+      wx.showToast({ title: '后台列表未部署', icon: 'none' })
     }
   },
   goBack() {

@@ -37,13 +37,14 @@
 云函数目录：
 
 - `cloudfunctions/verifyAdmin`
+- `cloudfunctions/adminList`
 
-需要在云函数环境变量里配置：
+两个云函数都需要配置相同的环境变量：
 
 - `ADMIN_USERNAME`: 管理员用户名
 - `ADMIN_PASSWORD`: 管理员密码
 
-管理员账号密码不要写入前端代码，也不要提交到 GitHub。
+`verifyAdmin` 负责登录验证，`adminList` 负责读取后台路线报名和成长定制列表。管理员账号密码不要写入前端代码，也不要提交到 GitHub。
 
 ## 隐藏管理入口
 
