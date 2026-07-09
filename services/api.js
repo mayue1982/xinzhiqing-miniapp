@@ -32,6 +32,23 @@ function getDb() {
   return wx.cloud.database({ env: CLOUD_ENV_ID })
 }
 
+async function submitCloudRecord(collection, record) {
+  const res = await wx.cloud.callFunction({
+    name: 'submitRecord',
+    data: {
+      collection,
+      record
+    }
+  })
+  if (!res.result || !res.result.ok) {
+    throw new Error((res.result && res.result.reason) || 'SUBMIT_RECORD_FAILED')
+  }
+  return {
+    ...record,
+    _id: res.result._id
+  }
+}
+
 function normalizeRequest(item) {
   return {
     ...item,
@@ -226,11 +243,7 @@ async function createRequest(payload) {
 
   if (canUseCloud()) {
     try {
-      const res = await getDb().collection('requests').add({ data: request })
-      const savedRequest = {
-        ...request,
-        _id: res._id
-      }
+      const savedRequest = await submitCloudRecord('requests', request)
       await notifyRequestByEmail(savedRequest)
       return fallback(savedRequest)
     } catch (error) {
@@ -261,11 +274,7 @@ async function createOrder(payload) {
 
   if (canUseCloud()) {
     try {
-      const res = await getDb().collection('orders').add({ data: order })
-      const savedOrder = {
-        ...order,
-        _id: res._id
-      }
+      const savedOrder = await submitCloudRecord('orders', order)
       await notifyRequestByEmail({
         ...savedOrder,
         type: '路线报名',
