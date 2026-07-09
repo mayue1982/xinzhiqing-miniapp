@@ -5,14 +5,16 @@ cloud.init({
 })
 
 function isAdmin(event) {
-  const expectedUsername = process.env.ADMIN_USERNAME
-  const expectedPassword = process.env.ADMIN_PASSWORD
+  const expectedUsername = String(process.env.ADMIN_USERNAME || '').trim().toLowerCase()
+  const expectedPassword = String(process.env.ADMIN_PASSWORD || '').trim()
+  const username = String(event.username || '').trim().toLowerCase()
+  const password = String(event.password || '').trim()
 
   if (!expectedUsername || !expectedPassword) {
     return false
   }
 
-  return event.username === expectedUsername && event.password === expectedPassword
+  return username === expectedUsername && password === expectedPassword
 }
 
 async function getCollection(name) {

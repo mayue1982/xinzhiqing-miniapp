@@ -5,10 +5,10 @@ cloud.init({
 })
 
 exports.main = async event => {
-  const expectedUsername = process.env.ADMIN_USERNAME
-  const expectedPassword = process.env.ADMIN_PASSWORD
-  const username = event.username || ''
-  const password = event.password || ''
+  const expectedUsername = String(process.env.ADMIN_USERNAME || '').trim().toLowerCase()
+  const expectedPassword = String(process.env.ADMIN_PASSWORD || '').trim()
+  const username = String(event.username || '').trim().toLowerCase()
+  const password = String(event.password || '').trim()
 
   if (!expectedUsername || !expectedPassword) {
     console.warn('ADMIN_USERNAME or ADMIN_PASSWORD is not configured.')
