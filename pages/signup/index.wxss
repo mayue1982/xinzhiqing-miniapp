@@ -3,3 +3,24 @@
 .form-card > .field {
   margin-bottom: 12rpx;
 }
+
+.privacy-check {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6rpx;
+  margin-top: 16rpx;
+  color: #70849a;
+  font-size: 23rpx;
+}
+
+.privacy-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4rpx;
+}
+
+.privacy-link {
+  color: #145ea8;
+  font-weight: 700;
+}

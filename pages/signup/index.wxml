@@ -31,6 +31,13 @@
     </view>
     <input class="field" placeholder="意向时间，如 8月班期" value="{{form.timeWindow}}" data-field="timeWindow" bindinput="updateField" />
     <textarea class="textarea" placeholder="补充说明：同行人、身体情况、想重点了解的内容等。" value="{{form.note}}" data-field="note" bindinput="updateField"></textarea>
+    <checkbox-group class="privacy-check" bindchange="togglePrivacy">
+      <label class="privacy-label">
+        <checkbox value="agree" checked="{{privacyAgreed}}" color="#145ea8" />
+        <text>我已阅读并同意</text>
+      </label>
+      <text class="privacy-link" bindtap="openPrivacy">《隐私说明》</text>
+    </checkbox-group>
     <view class="hero-actions" style="margin-top:18rpx;">
       <button class="primary-btn" loading="{{submitting}}" bindtap="submitSignup">提交报名</button>
     </view>

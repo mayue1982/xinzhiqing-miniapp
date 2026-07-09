@@ -1,0 +1,43 @@
+<view class="screen-page">
+  <view class="custom-nav with-back">
+    <button class="back-btn" bindtap="goBack">‹</button>
+    <view class="brand-wrap">
+      <view class="brand-dot">隐</view>
+      <view class="brand-stack">
+        <text class="brand-stack-title">隐私说明</text>
+        <text class="brand-stack-subtitle">PRIVACY</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-overview glass-card">
+    <text class="overview-kicker">Privacy Notice</text>
+    <view class="overview-title">个人信息收集与使用说明</view>
+    <view class="overview-copy">心之清文旅仅为完成路线报名、成长定制、顾问联系和行程服务承接而收集必要信息。</view>
+  </view>
+
+  <view class="privacy-card glass-card">
+    <view class="privacy-section-title">我们会收集的信息</view>
+    <view class="privacy-copy">在报名或成长定制过程中，可能收集您的姓名、联系电话、出发城市、报名人数、意向时间、目的地方向、预算范围和补充备注。</view>
+  </view>
+
+  <view class="privacy-card glass-card">
+    <view class="privacy-section-title">信息使用目的</view>
+    <view class="privacy-copy">上述信息仅用于顾问与您联系、确认报名意向、匹配路线方案、安排后续咨询和进行必要的服务沟通。</view>
+  </view>
+
+  <view class="privacy-card glass-card">
+    <view class="privacy-section-title">信息保存与保护</view>
+    <view class="privacy-copy">我们会通过微信云开发数据库保存提交记录，并采取合理措施保护您的信息。未经您同意，不会将个人信息用于与本服务无关的用途。</view>
+  </view>
+
+  <view class="privacy-card glass-card">
+    <view class="privacy-section-title">信息共享</view>
+    <view class="privacy-copy">除完成顾问跟进、行程沟通或法律法规要求外，我们不会向无关第三方公开、出售或非法提供您的个人信息。</view>
+  </view>
+
+  <view class="privacy-card glass-card">
+    <view class="privacy-section-title">撤回与删除</view>
+    <view class="privacy-copy">如需查询、更正或删除已提交的信息，可通过小程序顾问咨询入口联系工作人员处理。</view>
+  </view>
+</view>

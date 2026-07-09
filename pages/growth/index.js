@@ -22,7 +22,8 @@ Page({
     chips: ['培训', '游学', '线路', '定制'],
     selectedChip: '培训',
     form: createEmptyForm('培训'),
-    submitting: false
+    submitting: false,
+    privacyAgreed: false
   },
   onShow() {
     const tabBar = this.getTabBar && this.getTabBar()
@@ -59,12 +60,24 @@ Page({
     wx.setStorageSync(DRAFT_KEY, this.data.form)
     wx.showToast({ title: '已保存', icon: 'success' })
   },
+  togglePrivacy(e) {
+    this.setData({
+      privacyAgreed: (e.detail.value || []).includes('agree')
+    })
+  },
+  openPrivacy() {
+    wx.navigateTo({ url: '/pages/privacy/index' })
+  },
   async submitRequest() {
     if (this.data.submitting) return
 
     const { city, destination, groupSize, timeWindow, budget, serviceType, note } = this.data.form
     if (!city || !destination || !groupSize || !timeWindow || !budget || !serviceType || !note) {
       wx.showToast({ title: '请先填写完整信息', icon: 'none' })
+      return
+    }
+    if (!this.data.privacyAgreed) {
+      wx.showToast({ title: '请先阅读并同意隐私说明', icon: 'none' })
       return
     }
 

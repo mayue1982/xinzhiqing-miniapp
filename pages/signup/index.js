@@ -6,6 +6,7 @@ Page({
   data: {
     route: null,
     submitting: false,
+    privacyAgreed: false,
     form: {
       name: '',
       phone: '',
@@ -25,12 +26,24 @@ Page({
       [`form.${field}`]: e.detail.value
     })
   },
+  togglePrivacy(e) {
+    this.setData({
+      privacyAgreed: (e.detail.value || []).includes('agree')
+    })
+  },
+  openPrivacy() {
+    wx.navigateTo({ url: '/pages/privacy/index' })
+  },
   async submitSignup() {
     if (this.data.submitting) return
 
     const { name, phone, city, groupSize, timeWindow, note } = this.data.form
     if (!name || !phone || !city || !groupSize) {
       wx.showToast({ title: '请填写姓名、电话、城市和人数', icon: 'none' })
+      return
+    }
+    if (!this.data.privacyAgreed) {
+      wx.showToast({ title: '请先阅读并同意隐私说明', icon: 'none' })
       return
     }
 

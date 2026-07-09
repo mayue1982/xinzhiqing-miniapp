@@ -46,6 +46,13 @@ Growth Journey</view>
       <input class="field" placeholder="类型 / Service Type" value="{{form.serviceType}}" data-field="serviceType" bindinput="updateField" />
     </view>
     <textarea class="textarea" placeholder="简单描述你想参加的培训主题、游学目标、线路方向或特别需求。" value="{{form.note}}" data-field="note" bindinput="updateField"></textarea>
+    <checkbox-group class="privacy-check" bindchange="togglePrivacy">
+      <label class="privacy-label">
+        <checkbox value="agree" checked="{{privacyAgreed}}" color="#145ea8" />
+        <text>我已阅读并同意</text>
+      </label>
+      <text class="privacy-link" bindtap="openPrivacy">《隐私说明》</text>
+    </checkbox-group>
     <view class="hero-actions" style="margin-top:18rpx;">
       <button class="primary-btn" loading="{{submitting}}" bindtap="submitRequest">提交顾问</button>
       <button class="outline-btn" bindtap="saveDraft">保存</button>

@@ -1,0 +1,19 @@
+@import "../../app.wxss";
+
+.privacy-card {
+  margin-bottom: 14rpx;
+  padding: 22rpx;
+}
+
+.privacy-section-title {
+  color: #13263f;
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.privacy-copy {
+  margin-top: 12rpx;
+  color: #70849a;
+  font-size: 25rpx;
+  line-height: 1.7;
+}
